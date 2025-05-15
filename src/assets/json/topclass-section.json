@@ -1,0 +1,32 @@
+[
+    {
+        "Image" : "instructor-05.jpg",
+        "Name" : "نورا أحمد",
+        "Position" : "مصمم رئيسي",
+        "Reviews" : "4.8 (157 تقييم)"
+    },
+    {
+        "Image" : "instructor-06.jpg",
+        "Name" : "سارة محمد",
+        "Position" : "محاسب",
+        "Reviews" : "4.9 (20 تقييم)"
+    },
+    {
+        "Image" : "instructor-07.jpg",
+        "Name" : "عمر خالد",
+        "Position" : "مهندس معماري",
+        "Reviews" : "4.8 (157 تقييم)"
+    },
+    {
+        "Image" : "instructor-08.jpg",
+        "Name" : "ليلى محمود",
+        "Position" : "مصمم رئيسي",
+        "Reviews" : "5.0 (218 تقييم)"
+    },
+    {
+        "Image" : "instructor-06.jpg",
+        "Name" : "سارة محمد",
+        "Position" : "محاسب",
+        "Reviews" : "4.9 (20 تقييم)"
+    }
+]

@@ -1,0 +1,764 @@
+[
+    
+  {
+    "tittle": "الرئيسية",
+    "active_link": "/home/",
+    "showAsTab": false,
+    "separateRoute": true,
+    "menu": [
+      {
+        "menuValue": "الرئيسية",
+        "route": "/home/index",
+        "image":"home-01.jpg",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "active_link": "/home/index",
+        "subMenus": []
+      },
+      {
+        "menuValue": "الرئيسية الثانية",
+        "route": "/home/index-2",
+        "image":"home-02.jpg",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "active_link": "/home/index-2",
+        "subMenus": []
+      },
+      {
+        "menuValue": "الرئيسية الثالثة",
+        "image":"home-03.jpg",
+        "route": "/home/index-3",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "active_link": "/home/index-3",
+        "subMenus": []
+      },
+      {
+        "menuValue": "الرئيسية الرابعة",
+        "route": "/home/index-4",
+        "image":"home-04.jpg",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "active_link": "/home/index-4",
+        "subMenus": []
+      },
+      {
+        "menuValue": "الرئيسية الخامسة",
+        "image":"home-05.jpg",
+        "route": "/home/index-5",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "active_link": "/home/index-5",
+        "subMenus": []
+      },
+      {
+        "menuValue": "الرئيسية السادسة",
+        "route": "/home/index-6",
+        "image":"home-06.jpg",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "active_link": "/home/index-6",
+        "subMenus": []
+      }
+    ]
+  },
+  {
+    "tittle": "الدورات",
+    "active_link": "/courses/",
+    "active_link1": "/course/",
+    "active_link2": "/category/",
+    "active_link3": "/details/",
+    "showAsTab": false,
+    "separateRoute": false,
+    "menu": [
+      {
+        "menuValue": "الدورة",
+        "active_link": "/course/",
+        "hasSubRoute": true,
+        "showSubRoute": true,
+        "showAsTab2": false,
+        "subMenus": [
+          {
+            "menuValue": "شبكة الدورات",
+            "route": "/course/course-grid",
+            "active_link": "/course/course-grid",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "قائمة الدورات",
+            "route": "/course/course-list",
+            "active_link": "/course/course-list",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          }
+        ]
+      },
+      {
+        "menuValue": "فئة الدورة",
+        "hasSubRoute": true,
+        "showSubRoute": true,
+        "showAsTab2": false,
+        "active_link":"/category/",
+        "subMenus": [
+          {
+            "menuValue": "فئة الدورة",
+            "route": "/category/course-category-1",
+            "active_link": "/category/course-category-1",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "فئة الدورة 2",
+            "route": "/category/course-category-2",
+            "active_link": "/category/course-category-2",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "فئة الدورة 3",
+            "route": "/category/course-category-3",
+            "active_link": "/category/course-category-3",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          }
+        ]
+      },
+      {
+        "menuValue": "تفاصيل الدورة",
+        "active_link": "/details/",
+        "hasSubRoute": true,
+        "showSubRoute": true,
+        "showAsTab2": false,
+        "subMenus": [
+          {
+            "menuValue": "تفاصيل الدورة",
+            "route": "/details/course-details-1",
+            "active_link": "/details/course-details-1",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "تفاصيل الدورة 2",
+            "route": "/details/course-details-2",
+            "active_link": "/details/course-details-2",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          }
+        ]
+      },
+      {
+        "menuValue": "استئناف الدورة",
+        "route": "/courses/course-resume",
+        "active_link": "/courses/course-resume",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "مشاهدة الدورة",
+        "route": "/courses/course-watch",
+        "active_link": "/courses/course-watch",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "سلة الدورات",
+        "route": "/courses/cart",
+        "active_link": "/courses/cart",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "الدفع",
+        "route": "/courses/checkout",
+        "active_link": "checkout",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "إضافة دورة جديدة",
+        "route": "/courses/add-course",
+        "active_link": "/courses/add-course",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      }
+    ]
+  },
+  {
+    "tittle": "لوحة التحكم",
+    "active_link": "/instructor/",
+    "active_link1": "/students/",
+    "active_link2": "/instructor-students/",
+    "showAsTab": false,
+    "separateRoute": false,
+    "menu": [
+      {
+        "menuValue": "لوحة تحكم المدرب",
+        "active_link": "/instructor/",
+        "hasSubRoute": true,
+        "showSubRoute": true,
+        "showAsTab2": false,
+        "subMenus": [
+          {
+            "menuValue": "لوحة التحكم",
+            "route": "/instructor/instructor-dashboard",
+            "active_link": "/instructor/instructor-dashboard",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الملف الشخصي",
+            "route": "/instructor/instructor-profile",
+            "active_link": "/instructor/instructor-profile",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الدورة",
+            "route": "/instructor/instructor-course",
+            "active_link": "/instructor/instructor-course",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الإعلانات",
+            "route": "/instructor/instructor-announcements",
+            "active_link": "/instructor/instructor-announcements",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الواجبات",
+            "route": "/instructor/instructor-assignment",
+            "active_link": "/instructor/instructor-assignment",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الطلاب",
+            "active_link": "/instructor-students/",
+            "hasSubRoute": true,
+            "showSubRoute": true,
+            "showAsTab2": false,
+            "subMenusTwo": [
+              {
+                "menuValue": "شبكة الطلاب",
+                "route": "/instructor-students/student-grid",
+                "active_link": "/instructor-students/student-grid",
+                "hasSubRoute": false,
+                "showSubRoute": false,
+                "subMenus": []
+              },
+              {
+                "menuValue": "قائمة الطلاب",
+                "route": "/instructor-students/student-list",
+                "active_link": "/instructor-students/student-list",
+                "hasSubRoute": false,
+                "showSubRoute": false,
+                "subMenus": []
+              },
+              {
+                "menuValue": "تفاصيل الطالب",
+                "route": "/instructor-students/student-details",
+                "active_link": "/instructor-students/student-details",
+                "hasSubRoute": false,
+                "showSubRoute": false,
+                "subMenus": []
+              }
+            ]
+          },
+          {
+            "menuValue": "الاختبار",
+            "route": "/instructor/instructor-quiz",
+            "active_link": "/instructor/instructor-quiz",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "نتائج الاختبار",
+            "route": "/instructor/instructor-quiz-results",
+            "active_link": "/instructor/instructor-quiz-results",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الشهادة",
+            "route": "/instructor/instructor-certificate",
+            "active_link": "/instructor/instructor-certificate",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الأرباح",
+            "route": "/instructor/instructor-earnings",
+            "active_link": "/instructor/instructor-earnings",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "المدفوعات",
+            "route": "/instructor/instructor-payout",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "كشف الحساب",
+            "route": "/instructor/instructor-statements",
+            "active_link": "/instructor/instructor-statements",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "تذكرة الدعم",
+            "route": "/instructor/instructor-tickets",
+            "active_link": "/instructor/instructor-tickets",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الإعدادات",
+            "route": "/instructor/instructor-settings",
+            "active_link": "/instructor/instructor-settings",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          }
+        ]
+      },
+      {
+        "menuValue": "لوحة تحكم الطالب",
+        "active_link": "/students/",
+        "hasSubRoute": true,
+        "showSubRoute": true,
+        "showAsTab2": false,
+        "subMenus": [
+          {
+            "menuValue": "لوحة تحكم الطالب",
+            "route": "/students/student-dashboard",
+            "active_link": "/students/student-dashboard",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الملف الشخصي",
+            "route": "/students/student-profile",
+            "active_link": "/students/student-profile",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الدورات المسجلة",
+            "route": "/students/student-courses",
+            "active_link": "/students/student-courses",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "شهاداتي",
+            "route": "/students/student-certificates",
+            "active_link": "/students/student-certificates",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "قائمة الرغبات",
+            "route": "/students/student-wishlist",
+            "active_link": "/students/student-wishlist",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "التقييمات",
+            "route": "/students/student-reviews",
+            "active_link": "/students/student-reviews",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "محاولات الاختبار",
+            "route": "/students/student-quiz",
+            "active_link": "/students/student-quiz",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "سجل الطلبات",
+            "route": "/students/student-order-history",
+            "active_link": "/students/student-order-history",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الإحالات",
+            "route": "/students/student-referral",
+            "active_link": "/students/student-referral",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الرسائل",
+            "route": "/students/student-messages",
+            "active_link": "/students/student-messages",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "تذكرة الدعم",
+            "route": "/students/student-tickets",
+            "active_link": "/students/student-tickets",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الإعدادات",
+            "route": "/students/student-settings",
+            "active_link": "/students/student-settings",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "tittle": "الصفحات",
+    "active_link": "pages",
+    "showAsTab": false,
+    "separateRoute": false,
+    "menu": [
+      {
+        "menuValue": "المدربون",
+        "active_link": "/pages-instructor/",
+        "hasSubRoute": true,
+        "showSubRoute": true,
+        "showAsTab2": false,
+        "subMenus": [
+          {
+            "menuValue": "شبكة المدربين",
+            "route": "/pages-instructor/instructor-grid",
+            "active_link": "/pages-instructor/instructor-grid",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "قائمة المدربين",
+            "route": "/pages-instructor/instructor-list",
+            "active_link": "/pages-instructor/instructor-list",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "تفاصيل المدرب",
+            "route": "/pages-instructor/instructor-details",
+            "active_link": "/pages-instructor/instructor-details",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          }
+        ]
+      },
+      {
+        "menuValue": "من نحن",
+        "route": "/pages/about-us",
+        "active_link": "/pages/about-us",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "اتصل بنا",
+        "route": "/pages/contact-us",
+        "active_link": "/pages/contact-us",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "الإشعارات",
+        "route": "/pages/notifications",
+        "active_link": "/pages/notifications",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "كن مدرباً",
+        "route": "/pages/become-an-instructor",
+        "active_link": "/pages/become-an-instructor",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "التوصيات",
+        "route": "/pages/testimonials",
+        "active_link": "/pages/testimonials",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "المصادقة",
+        "hasSubRoute": true,
+        "showSubRoute": true,
+        "showAsTab2": false,
+        "subMenus": [
+          {
+            "menuValue": "تسجيل الدخول",
+            "route": "/",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "التسجيل",
+            "route": "/register",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "نسيت كلمة المرور",
+            "route": "/forgot-password",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "تعيين كلمة المرور",
+            "route": "/set-password",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "رمز التحقق",
+            "route": "/otp",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "قفل الشاشة",
+            "route": "/lock-screen",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          }
+        ]
+      },
+      {
+        "menuValue": "الخطأ",
+        "hasSubRoute": true,
+        "showSubRoute": true,
+        "showAsTab2": false,
+        "subMenus": [
+          {
+            "menuValue": "خطأ 404",
+            "route": "/error-404",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "خطأ 500",
+            "route": "/error-500",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          }
+        ]
+      },
+      {
+        "menuValue": "خطة الأسعار",
+        "route": "/pages/pricing-plan",
+        "active_link": "/pages/pricing-plan",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "الأسئلة الشائعة",
+        "route": "/pages/faq",
+        "active_link": "/pages/faq",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "قريباً",
+        "route": "/coming-soon",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "تحت الإنشاء",
+        "route": "/under-construction",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "الشروط والأحكام",
+        "route": "/pages/terms-and-conditions",
+        "active_link": "/pages/terms-and-conditions",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      },
+      {
+        "menuValue": "سياسة الخصوصية",
+        "route": "/pages/privacy-policy",
+        "active_link": "/pages/privacy-policy",
+        "hasSubRoute": false,
+        "showSubRoute": false,
+        "subMenus": []
+      }
+    ]
+  },
+  {
+    "tittle": "المدونة",
+    "active_link": "/blog-layouts/",
+    "active_link1": "/blogs/",
+    "showAsTab": false,
+    "separateRoute": false,
+    "menu": [
+      {
+        "menuValue": "تخطيطات المدونة",
+        "hasSubRoute": true,
+        "showSubRoute": true,
+        "showAsTab2": false,
+        "active_link": "/blog-layouts/",
+        "subMenus": [
+          {
+            "menuValue": "شبكة المدونة 1",
+            "route": "/blog-layouts/blog-grid",
+            "active_link": "/blog-layouts/blog-grid",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "شبكة المدونة 2",
+            "route": "/blog-layouts/blog-2-grid",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "شبكة المدونة 3",
+            "route": "/blog-layouts/blog-3-grid",
+            "active_link": "/blog-layouts/blog-3-grid",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "عرض المدونة المتحرك",
+            "route": "/blog-layouts/blog-carousal",
+            "active_link": "/blog-layouts/blog-carousal",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "تصميم المدونة",
+            "route": "/blog-layouts/blog-masonry",
+            "active_link": "/blog-layouts/blog-masonry",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الشريط الجانبي الأيسر للمدونة",
+            "route": "/blog-layouts/blog-left-sidebar",
+            "active_link": "/blog-layouts/blog-left-sidebar",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "الشريط الجانبي الأيمن للمدونة",
+            "route": "/blog-layouts/blog-right-sidebar",
+            "active_link": "/blog-layouts/blog-right-sidebar",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          }
+        ]
+      },
+      {
+        "menuValue": "تفاصيل المدونة",
+        "hasSubRoute": true,
+        "showSubRoute": true,
+        "showAsTab2": false,
+        "active_link": "/blogs/",
+        "subMenus": [
+          {
+            "menuValue": "تفاصيل المدونة",
+            "route": "/blogs/blog-details",
+            "active_link": "/blogs/blog-details",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "تفاصيل المدونة مع الشريط الجانبي الأيسر",
+            "route": "/blogs/blog-details-left-sidebar",
+            "active_link": "/blogs/blog-details-left-sidebar",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          },
+          {
+            "menuValue": "تفاصيل المدونة مع الشريط الجانبي الأيمن",
+            "route": "/blogs/blog-details-right-sidebar",
+            "active_link": "/blogs/blog-details-right-sidebar",
+            "hasSubRoute": false,
+            "showSubRoute": false,
+            "subMenus": []
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "Image" : "course-02.jpg",
+        "AvatarImage" : "avatar2.jpg",
+        "Name" : "Ana Reyes",
+        "Position" : "Wordpress",
+        "Title" : "Wordpress for Beginners - Master Wordpress Quickly",
+        "Reviews" : "4.4 (160 Reviews)",
+        "Amount" : "$140"
+    },
+    {
+        "Image" : "course-03.jpg",
+        "AvatarImage" : "avatar3.jpg",
+        "Name" : "Andrew Pirtle",
+        "Position" : "Design",
+        "Title" : "Sketch from A to Z (2024): Become an app designer",
+        "Reviews" : "4.6 (170 Reviews)",
+        "Amount" : "$160"
+    },
+    {
+        "Image" : "course-04.jpg",
+        "AvatarImage" : "avatar4.jpg",
+        "Name" : "Christy",
+        "Position" : "Programming",
+        "Title" : "Build Responsive Real World Websites with Crash Course",
+        "Reviews" : "4.2 (220 Reviews)",
+        "Amount" : "$200"
+    },
+    {
+        "Image" : "course-04.jpg",
+        "AvatarImage" : "avatar4.jpg",
+        "Name" : "Christy",
+        "Position" : "Programming",
+        "Title" : "Build Responsive Real World Websites with Crash Course",
+        "Reviews" : "4.2 (220 Reviews)",
+        "Amount" : "$200"
+    }
+]

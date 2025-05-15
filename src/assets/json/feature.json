@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "img": "instructor-09.jpg",
+        "Courses": "20 Courses",
+        "name": "David Lee",
+        "Developer": "Developer",
+        "Students": "50 Students"
+    },
+    {
+        "id": 2,
+        "img": "instructor-10.jpg",
+        "Courses": "15 Courses",
+        "name": "Daziy Millar",
+        "Developer": "PHP Expert",
+        "Students": "50 Students"
+     
+    },
+    {
+        "id": 3,
+        "img": "instructor-11.jpg",
+        "Courses": "22 Courses",
+        "name": "Patricia Mendoza",
+        "Developer": "Web Developer",
+        "Students": "50 Students"
+    },
+    {
+        "id": 4,
+        "img": "instructor-12.jpg",
+        "Courses": "20 Courses",
+        "name": "Skyler Whites",
+        "Developer": "UI Designer",
+        "Students": "50 Students"
+    },
+    {
+        "id": 5,
+        "img": "instructor-10.jpg",
+        "Courses": "15 Courses",
+        "name": "Patricia Mendoza",
+        "Developer": "Java Developer",
+        "Students": "40 Students"
+    }
+]

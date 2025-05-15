@@ -1,0 +1,56 @@
+[
+    {
+        "Badge" : "Education",
+        "Image" : "blog-7.jpg",
+        "UserImage" : "user-52.jpg",
+        "Title" : "Learn Web App Development from Experts in 2024",
+        "Content" : "Master the art of web application development with expert-led courses that cover the latest tools, fram...",
+        "Name" : "John Miller",
+        "Date" : "23 Apr 2024"
+    },
+    {
+        "Badge" : "Guides",
+        "Image" : "blog-8.jpg",
+        "UserImage" : "user-01.jpg",
+        "Title" : "Expand Your Career Opportunities With Python",
+        "Content" : "Unlock limitless career opportunities by mastering Python, one of the most versatile and in-demand ...",
+        "Name" : "Cedric Glenn",
+        "Date" : "20 Apr 2024"
+    },
+    {
+        "Badge" : "Technical",
+        "Image" : "blog-9.jpg",
+        "UserImage" : "user-02.jpg",
+        "Title" : "Learn Mobile Applications Development from Experts",
+        "Content" : "Elevate your skills with expert-led training in mobile application development! Learn to design, develop ...",
+        "Name" : "John Reyes",
+        "Date" : "04 Apr 2024"
+    },
+    {
+        "Badge" : "Guides",
+        "Image" : "blog-10.jpg",
+        "UserImage" : "user-03.jpg",
+        "Title" : "Complete PHP Programming Career Guideline",
+        "Content" : "Master PHP programming with our comprehensive career guideline! Learn the fundamentals, explore ...",
+        "Name" : "Donald Vesely",
+        "Date" : "24 Mar 2024"
+    },
+    {
+        "Badge" : "Education",
+        "Image" : "blog-11.jpg",
+        "UserImage" : "user-05.jpg",
+        "Title" : "Learn Web App Development from Experts in 2024",
+        "Content" : "Master the art of web application development with expert-led courses that cover the latest tools, fram...",
+        "Name" : "John Miller",
+        "Date" : "23 Apr 2024"
+    },
+    {
+        "Badge" : "Guides",
+        "Image" : "blog-8.jpg",
+        "UserImage" : "user-01.jpg",
+        "Title" : "Expand Your Career Opportunities With Python",
+        "Content" : "Unlock limitless career opportunities by mastering Python, one of the most versatile and in-demand ...",
+        "Name" : "Cedric Glenn",
+        "Date" : "20 Apr 2024"
+    }
+]

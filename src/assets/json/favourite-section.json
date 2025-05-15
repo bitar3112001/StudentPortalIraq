@@ -1,0 +1,42 @@
+[
+    {
+        "Name" : "الإدارة",
+        "Courses" : "156 دورة",
+        "Icon" : "isax isax-archive5 fs-36 text-primary"
+    },
+    {
+        "Name" : "تقنية المعلومات والبرمجيات",
+        "Courses" : "214 دورة",
+        "Icon" : "isax isax-airpod5 fs-36 text-primary"
+    },
+    {
+        "Name" : "التسويق",
+        "Courses" : "174 دورة",
+        "Icon" : "isax isax-bag-tick fs-36 text-primary"
+    },
+    {
+        "Name" : "الإنتاجية",
+        "Courses" : "126 دورة",
+        "Icon" : "isax isax-additem5 fs-36 text-primary"
+    },
+    {
+        "Name" : "أنماط الحياة",
+        "Courses" : "214 دورة",
+        "Icon" : "isax isax-dcube5 fs-36 text-primary"
+    },
+    {
+        "Name" : "التصميم",
+        "Courses" : "161 دورة",
+        "Icon" : "isax isax-bezier5 fs-36 text-primary"
+    },
+    {
+        "Name" : "التصميم",
+        "Courses" : "161 دورة",
+        "Icon" : "isax isax-bezier5 fs-36 text-primary"
+    },
+    {
+        "Name" : "التسويق",
+        "Courses" : "174 دورة",
+        "Icon" : "isax isax-bag-tick-25 fs-36 text-primary"
+    }
+]

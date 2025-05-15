@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "img": "icon-8.svg"
+    },
+    {
+        "id": 2,
+        "img": "icon-9.svg"
+     
+    },
+    {
+        "id": 3,
+        "img": "icon-10.svg"
+    },
+    {
+        "id": 4,
+        "img": "icon-11.svg"
+    },
+    {
+        "id": 5,
+        "img": "icon-12.svg"
+    },
+    {
+        "id": 6,
+        "img": "icon-13.svg"
+    },
+    {
+        "id": 7,
+        "img": "icon-14.svg"
+    }, 
+    {
+        "id": 8,
+        "img": "icon-15.svg"
+    }  
+]

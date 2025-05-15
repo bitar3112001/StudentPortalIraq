@@ -1,0 +1,35 @@
+[
+    {
+        "id": "1",
+        "Image": "course-22.jpg",
+        "BrandIcon": "icons/course-01.svg",
+        "Avatar": "user-50.jpg",
+        "Name": "David Benitz",
+        "Role": "Productivity",
+        "Title": "The Complete Business and Management Course",
+        "Rating": "5.0 (210 Reviews)",
+        "Fees": "$168"
+    },
+    {
+        "id": "2",
+        "Image": "course-25.jpg",
+        "BrandIcon": "featured-courses/Clip-path-group.svg",
+        "Avatar": "user-20.jpg",
+        "Name": "Edith Dorsey",
+        "Role": "Lifestyles",
+        "Title": "Build Creative Arts & media Course Completed",
+        "Rating": "4.9 (178 Reviews)",
+        "Fees": "$190"
+    },
+    {
+        "id": "3",
+        "Image": "course-24.jpg",
+        "BrandIcon": "featured-courses/react.svg",
+        "Avatar": "user-23.jpg",
+        "Name": "Calvin Johnsen",
+        "Role": "Development",
+        "Title": "Learn & Create ReactJS Tech Fundamentals Apps",
+        "Rating": "5.0 (154 Reviews)",
+        "Fees": "$147"
+    }
+]

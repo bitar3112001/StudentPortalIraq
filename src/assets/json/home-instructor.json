@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "Image": "instructor-09.jpg",
+        "Name": "Joyce Pence",
+        "Role": "Lead Designer",
+        "Rating": "4.8"
+    },
+    {
+        "id": "2",
+        "Image": "instructor-10.jpg",
+        "Name": "Edith Dorsey",
+        "Role": "Accountant",
+        "Rating": "5.0"
+    },
+    {
+        "id": "3",
+        "Image": "instructor-11.jpg",
+        "Name": "Ruben Holmes",
+        "Role": "Architect",
+        "Rating": "4.8"
+    },
+    {
+        "id": "4",
+        "Image": "instructor-12.jpg",
+        "Name": "Carol Magner",
+        "Role": "Lead Designer",
+        "Rating": "4.5"
+    },
+    {
+        "id": "5",
+        "Image": "instructor-10.jpg",
+        "Name": "Edith Dorsey",
+        "Role": "Accountant",
+        "Rating": "5.0"
+    }
+]

@@ -1,0 +1,826 @@
+/*-----------------
+	VueJs
+-----------------------*/
+.container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.student-img img {
+    /* max-width: 200px; */
+    width: 100%;
+    /* border-radius: 50%; */
+}
+
+.vue3-circular-progressbar {
+    width: 110px !important;
+    height: 110px !important;
+}
+
+/* .vue3-circular-progressbar svg circle {
+	stroke: #159F46 !important;
+} */
+.owl-carousel {
+    width: 100%;
+    z-index: 1;
+}
+
+.stickysidebar {
+    position: sticky;
+    top: 0;
+    padding-bottom: 1px;
+}
+
+.v3ti .v3ti-tag {
+    margin: 0px 5px 5px 0px;
+    color: #263238;
+    border: 1px solid #e9ecef;
+    background: rgba(227, 227, 227, 0.41) !important;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 12px 12px;
+    height: 34px;
+}
+
+.v3ti {
+    display: block;
+    border-radius: 5px;
+    color: #000;
+    background: #FFFFFF;
+    border: 1px solid #e9ecef;
+    box-shadow: unset;
+    min-height: 52px;
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.v3ti .v3ti-tag .v3ti-remove-tag {
+    content: "x";
+    padding: 0px 2px;
+    color: #263238;
+    margin-left: 3px;
+}
+
+.note-toolbar {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.note-editor.note-airframe .note-statusbar,
+.note-editor.note-frame .note-statusbar {
+    display: none;
+}
+
+.note-btn {
+    border: 0px solid #dae0e5;
+}
+
+.note-editor.note-airframe,
+.note-editor.note-frame {
+    border: 1px solid #e9ecef !important;
+    border-radius: 5px !important;
+    padding: 15px !important;
+}
+
+.select2-search--dropdown .select2-search__field {
+    display: none;
+}
+
+.select2-search--dropdown {
+    display: none;
+}
+
+.modal-backdrop {
+    z-index: 1049;
+}
+
+.carousel__pagination-button--active {
+    background-color: #F66962 !important;
+    width: 50px !important;
+    border-radius: 50px;
+    height: 15px;
+}
+
+.carousel__pagination-button {
+    background-color: #FFDEDA;
+    border-radius: 30px;
+    margin-left: 4px;
+    width: 15px;
+    height: 15px;
+}
+
+.carousel__pagination {
+    margin-top: 30px;
+}
+
+.drop-detail .vueselect {
+    border: 0;
+    border-radius: 50px;
+    background-color: #FFDEDA;
+    font-size: 14px;
+    width: 174px;
+    display: flex;
+    margin: 0px 17px;
+    border-radius: 50px !important;
+    border: 0;
+    height: 44px;
+}
+
+.select2-hidden-accessible {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+.select2-container {
+    width: 100% !important;
+}
+
+.how-it-works .carousel__track .carousel__slide {
+    margin-right: 25px !important;
+}
+
+.how-it-works .carousel__pagination-button {
+    background-color: #FFDEDA;
+    border-radius: 30px;
+    margin-left: 4px;
+}
+
+.how-it-works .carousel__pagination-button--active {
+    background-color: #F66962 !important;
+}
+
+.trend-course .carousel__track .carousel__slide .trend-box {
+    margin-right: 25px !important;
+}
+
+.latest-blog .carousel__track .carousel__slide .blog-widget {
+    margin-right: 24px !important;
+}
+
+.latest-blog .carousel__pagination-button--active {
+    background-color: #F66962 !important;
+    border-radius: 30px;
+}
+
+.latest-blog .carousel__pagination-button {
+    background-color: #FFDEDA;
+    border-radius: 30px;
+    margin-left: 4px;
+}
+
+.trend-course .carousel__pagination-button {
+    background-color: #FFDEDA;
+    border-radius: 30px;
+    margin-left: 4px;
+}
+
+.trend-course .carousel__pagination-button--active {
+    background-color: #F66962 !important;
+}
+
+.trend-product .course-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.personal-form .select2-selection {
+    border-color: rgba(255, 222, 218, 0.71);
+    min-height: 40px;
+    font-size: 14px;
+    color: #C4C4C4;
+}
+
+.personal-form .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 33px;
+}
+
+.personal-form .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    margin-top: -1px;
+}
+
+.vue3-circular-progressbar circle:nth-child(2) {
+    stroke: #159F46 !important;
+}
+
+.feature-instructors .carousel ol li .instructor-item.instructor-item-two{
+    margin: 0 12px;
+}
+
+.real-reviews-sec .real-reviews-grid {
+    text-align: left;
+}
+
+.real-reviews-sec .carousel__prev {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    text-shadow: none;
+    margin-top: 25px;
+    top: 100%;
+    cursor: pointer;
+    border: 0;
+    color: #392C7D;
+    font-size: 24px;
+}
+
+.real-reviews-sec .carousel__next {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    text-shadow: none;
+    margin-top: 25px;
+    top: 100%;
+    left: 0px;
+    cursor: pointer;
+    border: 0;
+    color: #392C7D;
+    font-size: 24px;
+}
+
+.home-two-slide .drop-detail .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    margin-left: 12px;
+}
+
+.home-five-slide .drop-detail-three .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    margin-left: -8px;
+}
+
+.home-five-favourite .carousel__track .carousel__slide {
+    margin-right: 20px !important;
+}
+
+.home-five-favourite .home-five-favourite-carousel .carousel__pagination-button {
+    width: 12px !important;
+    height: 11px;
+    margin: 0px 5px;
+    background: #DEDEDE;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    border-radius: 30px;
+}
+
+.home-five-favourite .home-five-favourite-carousel .carousel__pagination-button--active {
+    width: 12px !important;
+    height: 11px;
+    background: #7B1FFE !important;
+    box-shadow: 0px 0px 0px 3px #7b1ffe;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
+.home-five-trending-course .carousel__track .carousel__slide {
+    margin-right: 20px !important;
+}
+
+.home-five-trending-course .carousel__pagination-button {
+    width: 8px !important;
+    height: 11px;
+    margin: 0px 5px;
+    background: #DEDEDE;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    border-radius: 30px;
+}
+
+.home-five-trending-course .carousel__pagination-button--active {
+    width: 8px !important;
+    height: 11px;
+    background: #1A1E21 !important;
+    box-shadow: 0px 0px 0px 3px #1A1E21;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
+.home-slide-five .drop-detail-five .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    margin-left: 20px;
+}
+
+.home-slide-five .drop-detail-five .select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #fff;
+    margin: 10px;
+}
+
+.course-five-item {
+    width: 100%;
+    margin-right: 20px;
+}
+
+.home-five-course .carousel__pagination-button {
+    width: 50px;
+    height: 5px;
+    // margin: 5px 7px;
+    background: var(--light);
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity .2s ease;
+    border-radius: 30px;
+}
+
+.home-five-course .carousel__pagination-button--active {
+    background: #FFD600;
+    width: 50px;
+    height: 5px;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
+.testimonial-section-five .carousel__prev {
+    left: -40px;
+}
+
+.testimonial-section-five .carousel__next {
+    right: -80px;
+}
+
+.testimonial-section-five .carousel__next,
+.testimonial-section-five .carousel__prev {
+    z-index: 99;
+    background: #FFFFFF;
+    color: rgb(57, 44, 125);
+    box-shadow: 0px 4px 60px rgb(41 44 124 / 15%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.testimonial-section-five .carousel__next:hover,
+.testimonial-section-five .carousel__prev:hover {
+    color: #ffffff;
+    background: #FFD600;
+    opacity: 1;
+}
+
+.blog-five-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.blogs-section-five .carousel__pagination-button {
+    width: 50px;
+    height: 5px;
+    margin: 5px 7px;
+    background: #D6D6D6;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity .2s ease;
+    border-radius: 30px;
+}
+
+.blogs-section-five .carousel__pagination-button--active {
+    background: #FFD600;
+    width: 50px;
+    height: 5px;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
+.mentor-testimonial .carousel__viewport {
+    border: 14px solid #ededed;
+    max-width: 70%;
+    margin: auto;
+    border-radius: 45px;
+    background: linear-gradient(142.13deg, rgba(255, 255, 255, 0.28) 1.8%, rgba(255, 255, 255, 0.31) 99.75%);
+    backdrop-filter: blur(151.39px);
+}
+
+.testimonial-four .carousel__prev {
+    left: 20%;
+    top: 60%;
+    z-index: 99;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 0;
+}
+
+.testimonial-four .carousel__next {
+    right: 22%;
+    top: 60%;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 0;
+    z-index: 20;
+}
+
+.testimonial-four .carousel__prev,
+.carousel__next {
+    color: #392C7D;
+}
+
+.testimonial-four .carousel__prev:hover,
+.testimonial-four .carousel__next:hover {
+    color: #fff;
+    background: #f66962;
+    opacity: 1;
+}
+
+.home-three-slide-face .drop-detail-three .select2-container {
+    width: 162px !important;
+}
+
+.welcome-login .carousel__pagination-button {
+    border-radius: 30px;
+    margin-left: 4px;
+}
+
+.settings-menu .student-title {
+    padding-top: 10px;
+}
+
+.scroll-top.scroll-top-next {
+    -webkit-transform: rotate(46deg);
+    -ms-transform: rotate(46deg);
+    transform: rotate(46deg);
+    background: #fff;
+    border-radius: 0;
+    box-shadow: 0px 4px 20px rgb(224 224 224 / 40%);
+}
+
+.scroll-top.scroll-top-next:hover {
+    background: #b4a7f5;
+}
+
+.scroll-top.scroll-top-next:hover span {
+    color: #fff;
+}
+
+.scroll-top.scroll-top-next span {
+    -webkit-transform: rotate(-46deg);
+    -ms-transform: rotate(-46deg);
+    transform: rotate(-46deg);
+    color: #161515;
+}
+
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    background-size: calc(3.75em + 0.375rem) calc(0.75em + 0.375rem) !important;
+}
+
+.carousel__pagination-button::after {
+    display: none;
+}
+
+.scroll-area {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 90vh;
+    background-color: transparent !important;
+}
+
+.scroll-area-one {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 90vh;
+    background-color: transparent !important;
+}
+.scroll-area-one .ps__rail-x {
+    display: none;
+}
+.scroll-area-one .ps__rail-y {
+    display: none;
+}
+.tox-statusbar{
+	display: none !important;
+}
+.tox.tox-silver-sink.tox-tinymce-aux{
+	display: none !important;
+}
+.sidebar-div.chat-body{
+    margin: 33px 24px;
+}
+
+.how-it-works .carousel ol li .categories-item.categories-item-two{
+    width: 100%;
+}
+
+.swiper-slide {
+    width: 300px;
+    height: 400px;
+}
+
+// .course-img {
+//     height: 200px;
+//     overflow: hidden;
+//     border-radius: 12px;
+// }
+
+.course-content {
+    padding: 1rem;
+    background: white;
+    border-radius: 0 0 12px 12px;
+}
+
+.btn-dark {
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+}
+.featured-courses-section .feature-course-slider-2 .carousel ol li .course-item {
+    margin: 0 12px;
+}
+.favorite-course .owl-carousel .carousel .item {
+    width: 100%;
+    margin: 0 8px;
+}
+.course-slider-slick .carousel .item{
+    margin: 0 8px;
+}
+.trending-instruction .owl-carousel.instructor-carousel .carousel .item {
+    width: 100%;
+    margin: 0 8px;
+}
+.cliets-section .owl-carousel .carousel .item {
+    margin: 0 8px;
+}
+.course-section-five .home-five-course .carousel .categories-item.categories-item-six{
+    width: 100%;
+    margin: 0 12px;
+}
+.blogs-section-five {
+    background-color: #fff;
+}
+.blog-slider.lazy .carousel .carousel__viewport ol li {
+    margin: 0 8px;
+}
+
+.featured-instructor-sec .featured-instructor-slider .carousel ol li .instructor-item{
+    margin: 0 8px;
+}
+
+.testimonials-section.testimonials-sec-one .carousel ol li .home-testimonials {
+    width: 100%;
+    margin: 0 8px;
+}
+
+.top-courses-sec .top-courses-slider .carousel  ol li .top-courses{
+    width: 100%;
+    margin: 0 8px;
+}
+
+.top-courses-sec .top-courses-slider .carousel .carousel__prev{
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    left: -12px;
+    font-size: 16px;
+}
+.top-courses-sec .top-courses-slider .carousel .carousel__next{
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    right: -12px;
+    font-size: 16px;
+}
+.dark-mode .top-courses-sec .top-courses-slider .carousel .carousel__prev{
+    background-color: black;
+    color: #fff;
+    border: 1px solid black;
+}
+.dark-mode .top-courses-sec .top-courses-slider .carousel .carousel__next{
+    background-color: black;
+    color: #fff;
+    border: 1px solid black;
+}
+.dark-mode .featured-courses-section .feature-course-slider-2 .carousel .carousel__prev{
+    background-color: black;
+    color: #fff;
+    border: 1px solid black;
+}
+.dark-mode .featured-courses-section .feature-course-slider-2 .carousel .carousel__next{
+    background-color: black;
+    color: #fff;
+    border: 1px solid black;
+}
+
+.featured-courses-section .feature-course-slider-2 .carousel .carousel__next{
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    right: -12px;
+    font-size: 16px;
+}
+
+.featured-courses-section .feature-course-slider-2 .carousel .carousel__prev{
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    right: -12px;
+    font-size: 16px;
+}
+
+.featured-instructor-sec .featured-instructor-slider .carousel .carousel__next{
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    right: -12px;
+    font-size: 16px;
+}
+
+.featured-instructor-sec .featured-instructor-slider .carousel .carousel__prev{
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    right: -12px;
+    font-size: 16px;
+}
+.dark-mode .featured-instructor-sec .featured-instructor-slider .carousel .carousel__next{
+    background-color: black;
+    color: #fff;
+    border: 1px solid black;
+}
+
+.dark-mode .featured-instructor-sec .featured-instructor-slider .carousel .carousel__prev{
+    background-color: black;
+    color: #fff;
+    border: 1px solid black;
+}
+.instructor-detail-content .container .col-lg-8 .card-body .course-carousal .carousel .course-instructor{
+    width: 100%;
+    margin: 0 8px;
+}
+.instructor-detail-content .container .col-lg-8 .card-body .course-carousal .carousel .carousel__prev{
+    width: 34px;
+    height: 34px;
+    background: var(--light);
+    border-radius: 30px;
+    color: #242B3A;
+    position: absolute;
+    top: -49px !important;
+    font-size: larger;
+    left: 87%;
+}
+.instructor-detail-content .container .col-lg-8 .card-body .course-carousal .carousel .carousel__next{
+    width: 34px;
+    height: 34px;
+    background: var(--light);
+    border-radius: 30px;
+    color: #242B3A;
+    position: absolute;
+    top: -49px !important;
+    font-size: larger;
+    right: 8px;
+}
+.instructor-detail-content .container .row .col-lg-8 .enrolled-courses-card .enrolled-courses-body .course-carousal .carousel .course-instructor{
+    width: 100%;
+    margin: 0 8px;
+}
+.instructor-detail-content .container .row .col-lg-8 .enrolled-courses-card .enrolled-courses-body .course-carousal .carousel .carousel__prev{
+    width: 34px;
+    height: 34px;
+    background: var(--light);
+    border-radius: 30px;
+    color: #242B3A;
+    position: absolute;
+    top: -49px !important;
+    font-size: larger;
+    left: 87%;
+}
+.instructor-detail-content .container .row .col-lg-8 .enrolled-courses-card .enrolled-courses-body .course-carousal .carousel .carousel__next{
+    width: 34px;
+    height: 34px;
+    background: var(--light);
+    border-radius: 30px;
+    color: #242B3A;
+    position: absolute;
+    top: -49px !important;
+    font-size: larger;
+    right: 8px;
+}
+.blog-slider.lazy .carousel .blog {
+    width: 100%;
+    margin: 0 12px;
+}
+.filter-range .ant-slider-track {
+    background-color: #FF4667 !important;
+}
+.filter-range .ant-slider-track:hover {
+    background-color: #FF4667 !important;
+}
+
+.ant-slider:hover .ant-slider-handle::after {
+    background: #FF4667 !important;
+}
+.ant-slider .ant-slider-handle::after {
+    background: #FF4667 !important;
+    box-shadow: 0 0 0 2px #FF4667 !important;
+}
+
+.add-course-item .wizard-form-card{
+    display: block !important;
+}
+.dark-mode .favourite-box .course-info{
+    border-bottom: 1px solid black;
+}
+.dark-mode .blogs-section-five {
+    background-color: black;
+}
+.dark-mode .course-content {
+    background-color: black;
+}
+.testimonial-four .mentor-testimonial .carousel .carousel__viewport ol{
+    margin: auto !important;
+}
+
+.testimonial-four .mentor-testimonial .carousel .carousel__prev{
+    left: 20%;
+    z-index: 99;
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+.testimonial-four .mentor-testimonial .carousel .carousel__next{
+    right: 20%;
+    z-index: 99;
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+.about-us-content .carousel ol li .item {
+    margin: 0 8px;
+}
+
+.about-us-content .carousel .carousel__pagination{
+    display: flex;
+    justify-content: start !important;
+}
+
+.real-reviews-sec .real-reviews-group .col-lg-6 .owl-carousel.real-reviews .carousel .carousel__prev{
+    background: transparent;
+    text-shadow: none;
+    top: 100%;
+    margin-top: 0;
+    cursor: pointer;
+    border: 0;
+    color: var(--gray-700);
+    margin-bottom: 0px;
+    transform: rotate(0deg);
+    font-size: 20px;
+    left: -4%;
+}
+.real-reviews-sec .real-reviews-group .col-lg-6 .owl-carousel.real-reviews .carousel .carousel__next{
+    background: transparent;
+    text-shadow: none;
+    top: 100%;
+    margin-top: 0;
+    cursor: pointer;
+    border: 0;
+    color: var(--gray-700);
+    margin-bottom: 0px;
+    transform: rotate(0deg);
+    font-size: 20px;
+}
+
+.testimonial-section-five .testimonial-slider-five .testimonial-five .carousel{
+    direction: rtl !important;
+}
