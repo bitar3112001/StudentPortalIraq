@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "courseTitle": "SEO, Marketing",
+    "bgClass": "trending-bg-one",
+    "courseName": "Digital Marketing Strategies for Successfull Business Growth",
+    "courseDescription": "Navigating the Tech World: The Ultimate Guide to Finding an IT Mentor",
+    "studentIcon": "student-icon.svg",
+    "studentCount": "400",
+    "duration": "6hr 30min",
+    "originalPrice": "$300",
+    "instructorImage": "user-01.jpg"
+  },
+  {
+    "id": 2,
+    "courseTitle": "Personalised Learning",
+    "bgClass": "trending-bg-two",
+    "courseName": "Starting Your Own Business: From Idea to Launch",
+    "courseDescription": "Learn how mentorship can help guide your decision-making process",
+    "studentIcon": "student-icon.svg",
+    "studentCount": "900",
+    "duration": "9hr 30min",
+    "originalPrice": "$800",
+    "instructorImage": "user-02.jpg"
+  },
+  {
+    "id": 3,
+    "courseTitle": "Finance",
+    "bgClass": "trending-bg-three",
+    "courseName": "Financial Literacy: Managing Your Money for Long-Term Growth",
+    "courseDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam dolor",
+    "studentIcon": "student-icon.svg",
+    "studentCount": "400",
+    "duration": "6hr 30min",
+    "originalPrice": "$300",
+    "instructorImage": "user-02.jpg"
+  },
+  {
+    "id": 4,
+    "courseTitle": "Business Management",
+    "bgClass": "trending-bg-four",
+    "courseName": "The Complete Web Developer PHP framework Course 2.0",
+    "courseDescription": "Scaling a business requires more than just hard work—it requires",
+    "studentIcon": "student-icon.svg",
+    "studentCount": "900",
+    "duration": "4hr 30min",
+    "originalPrice": "$200",
+    "instructorImage": "user-04.jpg"
+  },
+  {
+    "id": 5,
+    "courseTitle": "SEO, Marketing",
+    "bgClass": "trending-bg-one",
+    "courseName": "Digital Marketing Strategies for Successfull Business Growth",
+    "courseDescription": "The tech industry is vast and ever-changing, but a mentor can help",
+    "studentIcon": "student-icon.svg",
+    "studentCount": "400",
+    "duration": "6hr 30min",
+    "originalPrice": "$300",
+    "instructorImage": "user-05.jpg"
+  },
+  {
+    "id": 6,
+    "courseTitle": "Personalised Learning",
+    "bgClass": "trending-bg-one",
+    "courseName": "Financial Literacy: Managing Your Money for Long-Term",
+    "courseDescription": "Learn how mentorship can help guide your decision-making process",
+    "studentIcon": "student-icon.svg",
+    "studentCount": "900",
+    "duration": "9hr 30min",
+    "originalPrice": "$800",
+    "instructorImage": "user-06.jpg"
+  },
+  {
+    "id": 7,
+    "courseTitle": "Finance",
+    "bgClass": "trending-bg-one",
+    "courseName": "Financial Literacy: Managing Your Money for Long-Term",
+    "courseDescription": "The tech industry is vast and ever-changing, but a mentor can help",
+    "studentIcon": "student-icon.svg",
+    "studentCount": "400",
+    "duration": "6hr 30min",
+    "originalPrice": "$300",
+    "instructorImage": "user-07.jpg"
+  }
+]

@@ -1,0 +1,52 @@
+[
+    {
+        "Image" : "course-22.jpg",
+        "IconImage" : "icons/course-01.svg",
+        "UserImage" : "user-29.jpg",
+        "UserName" : "بريندا سلاتون",
+        "Badge" : "تصميم",
+        "Title" : "معلومات عن دورة درجة تصميم واجهة المستخدم/تجربة المستخدم",
+        "Reviews" : "4.9 (200 تقييم)",
+        "Amount"  : "$120"
+    },
+    {
+        "Image" : "course-23.jpg",
+        "IconImage" : "icons/course-01.svg",
+        "UserImage" : "user-50.jpg",
+        "UserName" : "ديفيد بينيتز",
+        "Badge" : "الإنتاجية",
+        "Title" : "دورة الأعمال والإدارة الكاملة",
+        "Reviews" : "5.0 (210 تقييم)",
+        "Amount"  : "$168"
+    },
+    {
+        "Image" : "course-24.jpg",
+        "IconImage" : "featured-courses/react.svg",
+        "UserImage" : "user-23.jpg",
+        "UserName" : "كالفن جونسن",
+        "Badge" : "تطوير",
+        "Title" : "تعلم وإنشاء تطبيقات أساسيات تقنية ReactJS",
+        "Reviews" : "5.0 (154 تقييم)",
+        "Amount"  : "$147"
+    },
+    {
+        "Image" : "course-25.jpg",
+        "IconImage" : "featured-courses/Clip-path-group.svg",
+        "UserImage" : "user-20.jpg",
+        "UserName" : "إديث دورسي",
+        "Badge" : "أنماط الحياة",
+        "Title" : "بناء دورة الفنون الإبداعية والإعلام المكتملة",
+        "Reviews" : "4.9 (178 تقييم)",
+        "Amount"  : "$190"
+    },
+    {
+        "Image" : "course-22.jpg",
+        "IconImage" : "icons/course-01.svg",
+        "UserImage" : "user-50.jpg",
+        "UserName" : "ديفيد بينيتز",
+        "Badge" : "الإنتاجية",
+        "Title" : "دورة الأعمال والإدارة الكاملة",
+        "Reviews" : "5.0 (210 تقييم)",
+        "Amount"  : "$168"
+    }
+]

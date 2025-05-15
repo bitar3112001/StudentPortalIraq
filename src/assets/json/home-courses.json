@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "Image": "icon-6.svg",
+        "Title": "Frontend  Developer"
+    },
+    {
+        "id": 2,
+        "Image": "icon-7.svg",
+        "Title": "Jira Management"
+    },
+    {
+        "id": 3,
+        "Image": "icon-8.svg",
+        "Title": "Figma Developer"
+    },
+    {
+        "id": 4,
+        "Image": "icon-9.svg",
+        "Title": "Framer Developer"
+    },
+    {
+        "id": 5,
+        "Image": "icon-10.svg",
+        "Title": "Vue js Developer"
+    },
+    {
+        "id": 6,
+        "Image": "icon-11.svg",
+        "Title": "Shopify Developer"
+    }
+]

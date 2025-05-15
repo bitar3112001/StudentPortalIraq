@@ -1,0 +1,57 @@
+[
+    {
+        "id": "1",
+        "Image": "course-36.jpg",
+        "Fees": "$300",
+        "Badge": "UI/UX",
+        "BadgeClass": "badge-soft-info",
+        "Title": "Information About UI/UX Design Degree",
+        "Avatar": "user-06.jpg",
+        "Name": "Brenda Slaton",
+        "Rating": "5.0"
+    },
+    {
+        "id": "2",
+        "Image": "course-37.jpg",
+        "Fees": "$500",
+        "Badge": "Productivity",
+        "BadgeClass": "badge-soft-danger",
+        "Title": "Learn & Create ReactJS Tech Fundamentals Apps",
+        "Avatar": "user-07.jpg",
+        "Name": "David Benitez",
+        "Rating": "5.0"
+    },
+    {
+        "id": "3",
+        "Image": "course-38.jpg",
+        "Fees": "$350",
+        "Badge": "Management",
+        "BadgeClass": "badge-soft-purple",
+        "Title": "The Complete Business and Management Course",
+        "Avatar": "user-08.jpg",
+        "Name": "Calvin Johnsen",
+        "Rating": "5.0"
+    },
+    {
+        "id": "4",
+        "Image": "course-39.jpg",
+        "Fees": "$500",
+        "Badge": "Art & Media",
+        "BadgeClass": "badge-soft-success",
+        "Title": "Build Creative Arts & media Course Completed",
+        "Avatar": "user-09.jpg",
+        "Name": "David Benitez",
+        "Rating": "5.0"
+    },
+    {
+        "id": "5",
+        "Image": "course-37.jpg",
+        "Fees": "$300",
+        "Badge": "Productivity",
+        "BadgeClass": "badge-soft-danger",
+        "Title": "Learn & Create ReactJS Tech Fundamentals Apps",
+        "Avatar": "user-07.jpg",
+        "Name": "David Benitez",
+        "Rating": "5.0"
+    }
+]

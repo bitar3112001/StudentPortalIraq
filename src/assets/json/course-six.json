@@ -1,0 +1,32 @@
+[
+    {
+        "Image" : "framework-01.svg",
+        "Name" : "Angular",
+        "Instructors" : "50 Instructors"
+    },
+    {
+        "Image" : "framework-02.svg",
+        "Name" : "React JS",
+        "Instructors" : "50 Instructors"
+    },
+    {
+        "Image" : "framework-03.svg",
+        "Name" : "Node JS",
+        "Instructors" : "30 Instructors"
+    },
+    {
+        "Image" : "framework-04.svg",
+        "Name" : "Docker",
+        "Instructors" : "60 Instructors"
+    },
+    {
+        "Image" : "framework-01.svg",
+        "Name" : "Angular",
+        "Instructors" : "40 Instructors"
+    },
+    {
+        "Image" : "framework-02.svg",
+        "Name" : "React JS",
+        "Instructors" : "50 Instructors"
+    }
+]
