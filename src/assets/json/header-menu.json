@@ -6,15 +6,7 @@
     "showAsTab": false,
     "separateRoute": true,
     "menu": [
-      {
-        "menuValue": "الرئيسية",
-        "route": "/home/index",
-        "image":"home-01.jpg",
-        "hasSubRoute": false,
-        "showSubRoute": false,
-        "active_link": "/home/index",
-        "subMenus": []
-      },
+     
       {
         "menuValue": "الرئيسية الثانية",
         "route": "/home/index-2",

@@ -1,5 +1,5 @@
 <template>
-  <div class="login-content">
+  <div class="login-content" dir="rtl">
     <div class="row">
       <!-- Login Banner -->
       <login-banner></login-banner>
@@ -11,10 +11,10 @@
           <div class="loginbox">
             <div class="w-100">
               <div class="d-flex align-items-center justify-content-between login-header">
-                <img src="@/assets/img/logo.svg" class="img-fluid" alt="Logo" />
-                <router-link to="/home/" class="link-1">Back to Home</router-link>
+                <img src="@/assets/img/logo1.jpg" class="img-fluid" alt="Logo" width="60px" />
+                <router-link to="/home/index-2" class="link-1">العودة للرئيسية</router-link>
               </div>
-              <h1 class="fs-32 fw-bold topic">Sign into Your Account</h1>
+              <h1 class="fs-32 fw-bold topic">تسجيل الدخول إلى حسابك</h1>
               <Form
                 @submit="onSubmit"
                 :validation-schema="schema"
@@ -23,21 +23,20 @@
               >
                 <div class="mb-3 position-relative">
                   <label class="form-label"
-                    >Email<span class="text-danger ms-1">*</span></label
+                    >البريد الإلكتروني<span class="text-danger ms-1">*</span></label
                   >
                   <Field
-                    name="email"
-                    type="text"
-                    value="example@example.com"
+                    name="register_id"
+                    value="419300182"
                     class="form-control"
                   />
                   <div class="invalid-feedback">{{ errors.email }}</div>
-                  <div class="emailshow text-danger mt-2" id="email"></div>
+                  <div class="emailshow text-danger mt-2" id="register_id"></div>
                   <span><i class="isax isax-sms input-icon text-gray-7 fs-14 mt-3"></i></span>
                 </div>
                 <div class="mb-3 position-relative">
                   <label class="form-label"
-                    >Password <span class="text-danger"> *</span></label
+                    >كلمة المرور <span class="text-danger"> *</span></label
                   >
                   <div class="position-relative">
                     <Field
@@ -65,24 +64,30 @@
                       id="flexCheckDefault"
                     />
                     <label class="form-check-label ms-2" for="flexCheckDefault">
-                      Remember Me
+                      تذكرني
                     </label>
                   </div>
                   <div class="">
                     <router-link to="forgot-password" class="link-2">
-                      Forgot Password ?
+                      نسيت كلمة المرور؟
                     </router-link>
                   </div>
                 </div>
                 <div class="d-grid">
-                  <button class="btn btn-secondary btn-lg" type="submit">
-                    Login <i class="isax isax-arrow-right-3 ms-1"></i>
+                  <button class="btn btn-secondary btn-lg" type="submit" :disabled="isLoading">
+                    <span v-if="isLoading">
+                      <i class="fas fa-spinner fa-spin me-2"></i>
+                      جاري تسجيل الدخول...
+                    </span>
+                    <span v-else>
+                      تسجيل الدخول <i class="isax isax-arrow-right-3 ms-1"></i>
+                    </span>
                   </button>
                 </div>
               </Form>
 
               <div class="d-flex align-items-center justify-content-center or fs-14 mb-3">
-                Or
+                أو
               </div>
 
               <div class="d-flex align-items-center justify-content-center mb-3">
@@ -91,22 +96,22 @@
                     src="@/assets/img/icons/google.svg"
                     alt="img"
                     class="me-2"
-                  />Google</a
+                  />جوجل</a
                 >
                 <a href="javascript:void(0);" class="btn btn-light"
                   ><img
                     src="@/assets/img/icons/facebook.svg"
                     alt="img"
                     class="me-2"
-                  />Facebook</a
+                  />فيسبوك</a
                 >
               </div>
 
               <div
                 class="fs-14 fw-normal d-flex align-items-center justify-content-center"
               >
-                Don't you have an account?<router-link to="/register" class="link-2 ms-1">
-                  Sign up</router-link
+                ليس لديك حساب؟<router-link to="/register" class="link-2 ms-1">
+                  سجل الآن</router-link
                 >
               </div>
 
@@ -124,6 +129,9 @@ import { ref } from "vue";
 import { router } from "@/router";
 import { Form, Field } from "vee-validate";
 import * as Yup from "yup";
+import { authService } from "@/services/api";
+import Swal from 'sweetalert2';
+
 export default {
   components: {
     Form,
@@ -135,11 +143,12 @@ export default {
       password: null,
       emailError: "",
       passwordError: "",
+      isLoading: false,
     };
   },
   computed: {
     buttonLabel() {
-      return this.showPassword ? "Hide" : "Show";
+      return this.showPassword ? "إخفاء" : "إظهار";
     },
   },
   methods: {
@@ -148,39 +157,51 @@ export default {
     },
   },
   setup() {
-    let users = localStorage.getItem("storedData");
-    if (users === null) {
-      let password = [
-        {
-          email: "example@example.com",
-          password: "123456",
-        },
-      ];
-      const jsonData = JSON.stringify(password);
-      localStorage.setItem("storedData", jsonData);
-    }
     const schema = Yup.object().shape({
-      email: Yup.string().required("Email is required").email("Email is invalid"),
       password: Yup.string()
-        .min(6, "Password must be at least 6 characters")
-        .required("Password is required"),
+        .min(6, "يجب أن تكون كلمة المرور 6 أحرف على الأقل")
+        .required("كلمة المرور مطلوبة"),
     });
-    const onSubmit = (values) => {
-      document.getElementById("email").innerHTML = "";
+
+    const onSubmit = async (values) => {
+      document.getElementById("register_id").innerHTML = "";
       document.getElementById("password").innerHTML = "";
-      let data = localStorage.getItem("storedData");
-      var Pdata = JSON.parse(data);
-      const Eresult = Pdata.find(({ email }) => email === values.email);
-      if (Eresult) {
-        if (Eresult.password === values.password) {
-          router.push("/home/");
-        } else {
-          document.getElementById("password").innerHTML = "Incorrect password";
+ 
+      try {
+        const loginData = {
+          password: values.password,
+          register_id: values.register_id // Using email as register_id as per your request format
+        };
+        
+        const response = await authService.login(loginData);
+        
+        if (response.token) {
+          await Swal.fire({
+            icon: 'success',
+            title: 'تم تسجيل الدخول بنجاح',
+            text: 'جاري تحويلك إلى الصفحة الرئيسية...',
+            timer: 2000,
+            showConfirmButton: false
+          });
+          router.push("/home/index-2");
         }
-      } else {
-        document.getElementById("email").innerHTML = "Email is not valid";
+      } catch (error) {
+        let errorMessage = "حدث خطأ أثناء تسجيل الدخول";
+        
+        if (error.message === "Invalid credentials") {
+          errorMessage = "كلمة المرور غير صحيحة";
+        } else if (error.message === "User not found") {
+          errorMessage = "البريد الإلكتروني غير صالح";
+        }
+        
+        await Swal.fire({
+          icon: 'error',
+          title: 'خطأ في تسجيل الدخول',
+          text: errorMessage
+        });
       }
     };
+
     return {
       schema,
       onSubmit,
