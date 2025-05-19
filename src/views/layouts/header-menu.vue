@@ -14,7 +14,7 @@
                 <li class="has-submenu megamenu" @mouseenter="activateMenu" :class="{ 'active': isActiveRoute(item.active_link) }" 
                     @mouseleave="deactivateMenu" v-if="item.separateRoute === true && item.tittle === 'الرئيسية'">
                     <a href="javascript:void(0);" @click="toggleTab(item)">{{ item.tittle }}
-                        <i class="fas fa-chevron-down"></i>
+                        <!-- <i class="fas fa-chevron-down"></i> -->
                     </a>
                     <ul class="submenu mega-submenu" :class="{ 'd-block': item.showAsTab }">
                         <li>
@@ -39,7 +39,8 @@
                 </li>
                 <li v-else-if="item.separateRoute === false" class="has-submenu" :class="{ 'active': isActiveRoute(item.active_link) || isActiveRoute(item.active_link1) || isActiveRoute(item.active_link2) || isActiveRoute(item.active_link3)}">
                     <a href="javascript:void(0);" @click="toggleTab(item)">
-                        {{ item.tittle }} <i class="fas fa-chevron-down"></i>
+                        {{ item.tittle }}
+                         <!-- <i class="fas fa-chevron-down"></i> -->
                     </a>
                     <ul class="submenu" :class="{ 'd-block': item.showAsTab }">
                         <template v-for="menuItem in item.menu" :key="menuItem.menuValue">

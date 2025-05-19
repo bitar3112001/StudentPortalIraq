@@ -120,23 +120,23 @@ export default {
                                 <li><a class="dropdown-item rounded" href="javascript:void(0);">EURO</a></li>
                             </ul>
                         </div>
-                        <ul class="social-icon d-flex align-items-center mb-2">
+                        <!-- <ul class="social-icon d-flex align-items-center mb-2">
                             <li class="me-2">
-                                <a href="javascript:void(0);"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="javascript:void(0);"><i class="fa-brands fa-facebook"></i></a>
                             </li>
                             <li class="me-2">
                                 <a href="javascript:void(0);"><i class="fa-brands fa-instagram"></i></a>
                             </li>
                             <li class="me-2">
-                                <a href="javascript:void(0);"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="javascript:void(0);"><i class="fa-brands fa-twitter"></i></a>
                             </li>
                             <li class="me-2">
                                 <a href="javascript:void(0);"><i class="fa-brands fa-youtube"></i></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="javascript:void(0);"><i class="fa-brands fa-linkedin-in"></i></a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
             </div>
@@ -203,11 +203,11 @@ export default {
                                         <img src="@/assets/img/flags/arab-flag.svg" class="me-2" alt="flag">ARA
                                     </a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a class="dropdown-item rounded d-flex align-items-center" href="javascript:void(0);">
                                         <img src="@/assets/img/flags/france-flag.svg" class="me-2" alt="flag">FRE
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <div class="dropdown icon-btn me-2">
