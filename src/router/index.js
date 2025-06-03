@@ -341,11 +341,16 @@ const routes = [
  
 ];
 
-export const router = createRouter({
-  history: createWebHistory("/vue/template-rtl/"),
+const base = process.env.NODE_ENV === 'production'
+  ? '/studentDash/'      // <-- identical to vue.config.js
+  : '/';
+
+const router = createRouter({
+  history: createWebHistory(base),
   linkActiveClass: "active",
   routes,
 });
+
 router.beforeEach((to, from, next) => {
   // Scroll to the top of the page
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -353,3 +358,5 @@ router.beforeEach((to, from, next) => {
   // Continue with the navigation
   next();
 });
+
+export { router }
