@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">StudentPortalIraq</string>
+    <string name="title_activity_main">StudentPortalIraq</string>
+    <string name="package_name">com.studentportal.iraq</string>
+    <string name="custom_url_scheme">com.studentportal.iraq</string>
+</resources>

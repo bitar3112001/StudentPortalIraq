@@ -122,7 +122,7 @@ import Loginbanner from '@/views/pages/pages/authentication/loginbanner.vue';
 
 // plugins
 import 'bootstrap/dist/css/bootstrap.rtl.min.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'bootstrap-vue-3/dist/bootstrap-vue-3.css';
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@/assets/css/feather.css';
@@ -248,8 +248,13 @@ app.component('date-picker', DatePicker);
 app.component('vue-select', VueSelect)
 app.component(VueFeather.name, VueFeather)
 app.use(VueApexCharts)
-.use(BootstrapVue3)
-.use(BToastPlugin)
-.use(Antd)
+
+// Register plugins
+app.use(router)
+app.use(BootstrapVue3)
+app.use(BToastPlugin)
+app.use(Antd)
 app.use(CKEditor)
-app.use(router).mount('#app');
+
+// Mount the app
+app.mount('#app')
