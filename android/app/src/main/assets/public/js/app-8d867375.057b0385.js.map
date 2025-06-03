@@ -1,0 +1,1 @@
+{"version":3,"file":"js/app-8d867375.057b0385.js","mappings":"6hpFAAA,aAAe,IAA0B,a","sources":["webpack://DreamsLMS/./src/assets/img/logo/favicon.ico"],"sourcesContent":["export default __webpack_public_path__ + \"favicon.ico\";"],"names":[],"sourceRoot":""}
