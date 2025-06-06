@@ -2,8 +2,8 @@
 <template>
     <div>
         <div class="title">
-            <h5>الوسائط المرفقة</h5>
-            <p>ملفات الفيديو المرفقة (mp4, YouTube, Vimeo, etc.)</p>
+            <h5>الوسائط المرفوعة</h5>
+            <p>مقدمة للدورة</p>
         </div>
         <div class="row">
             <!-- 1. Thumbnail Upload -->
@@ -18,7 +18,7 @@
                         <div class="col-md-10">
                             <!-- Show the file name or placeholder -->
                             <input type="text" class="form-control" :value="thumbnailName" readonly
-                                placeholder="لا يوجد ملف مرفوع" />
+                                placeholder="لا يوجد ملف محدد" />
                         </div>
                         <div class="col-md-2 d-grid">
                             <label for="thumbnail-upload" class="file-upload-btn text-center">
@@ -32,15 +32,28 @@
                 </div>
             </div>
 
+            <!-- Thumbnail Preview Section -->
+            <div class="col-md-12 mt-3">
+                <div class="thumbnail-preview">
+                    <img v-if="imagePreview || formData.image"
+                        :src="imagePreview || (typeof formData.image === 'string' ? `http://localhost:8000/storage/${formData.image}` : '')"
+                        class="img-fluid rounded" alt="Course Thumbnail Preview" />
+                    <div v-else class="no-image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>لا يوجد صورة محددة</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-md-12">
                 <div class="upload-img-section d-flex align-items-center justify-content-center"
                     id="upload-img-section">
                     <input type="file" id="upload-img-input" style="display: none;"
                         accept="image/jpeg, image/png, image/gif, image/webp" />
                     <div class="upload-content">
-                        <label class="form-label">رابط الفيديو (غير قابل للتعديل)</label>
+                        <label class="form-label">الرابط المدمج (غير قابل للتعديل)</label>
                         <textarea type="text" class="form-control" v-model="videoEmbedUrl"
-                            placeholder="عند الانتهاء، يظهر رابط الفيديو هنا" />
+                            placeholder="عند الانتهاء، يظهر الرابط المدمج هنا" />
                     </div>
                 </div>
                 <hr class="mt-4 mb-4" />
@@ -53,23 +66,12 @@
                         <div class="dz-message">قم بإرفاق الفيديو هنا أو انقر لرفع</div>
                     </div>
                 </div>
-                <!-- Progress Bar -->
-                <div v-if="isProcessing" class="mt-3">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                            :style="{ width: totalProgress + '%' }" :aria-valuenow="totalProgress" aria-valuemin="0"
-                            aria-valuemax="100">
-                            {{ totalProgress }}%
-                        </div>
-                    </div>
-                    <small class="text-muted mt-1 d-block">{{ progressStatus }}</small>
-                </div>
             </div>
 
             <!-- 3. Video Preview (once embedUrl is available) -->
             <div class="col-md-12" v-if="videoEmbedUrl">
-                <div class="position-relative text-center">
-                    <div class="d-flex justify-content-center" v-html="videoEmbedUrl"></div>
+                <div class="position-relative d-flex justify-content-center align-items-center">
+                    <div v-html="videoEmbedUrl" class="video-container text-center"></div>
                 </div>
             </div>
         </div>
@@ -93,24 +95,28 @@ export default {
         return {
             dropzoneInstance: null,
             currentVideoId: null,
-            videoEmbedUrl: 'default',
+            videoEmbedUrl: '',
             isProcessing: false,
             thumbnailFile: null,
             thumbnailName: '',
             imagePreview: null,
             imageFile: null,
-            uploadProgress: 0,
-            processingProgress: 0,
-            totalProgress: 0,
-            progressStatus: 'Preparing upload...',
         };
     },
     created() {
-        // Initialize trailer_url with default value
-        this.$emit('update:form-data', {
-            ...this.formData,
-            trailer_url: 'default'
-        });
+        // Initialize with existing data if available
+        if (this.formData.trailer_url) {
+            this.videoEmbedUrl = this.formData.trailer_url;
+        }
+        if (this.formData.image) {
+            if (typeof this.formData.image === 'string') {
+                // If image is a URL string, extract the filename
+                this.thumbnailName = this.formData.image.split('/').pop() || 'Current Image';
+            } else if (this.formData.image instanceof File) {
+                // If image is a File object, use its name
+                this.thumbnailName = this.formData.image.name;
+            }
+        }
     },
     watch: {
         'formData.thumbnailFile': {
@@ -149,14 +155,7 @@ export default {
                     const resp = await axios.get(`/vdocipher/status/${videoId}`);
                     console.log(`[poll ${attempts + 1}] status of ${videoId} →`, resp.data);
 
-                    // Update processing progress
-                    this.processingProgress = Math.min(100, (attempts / maxAttempts) * 100);
-                    this.totalProgress = 70 + Math.floor(this.processingProgress * 0.3); // Processing takes 30% of total progress
-                    this.progressStatus = `Processing video: ${this.processingProgress.toFixed(1)}%`;
-
                     if (resp.data.success && resp.data.status.toLowerCase() === 'ready') {
-                        this.totalProgress = 100;
-                        this.progressStatus = 'Video ready!';
                         return;
                     }
 
@@ -197,6 +196,9 @@ export default {
                     alert('File size exceeds 5MB limit');
                     return;
                 }
+
+                // Create preview URL
+                this.imagePreview = URL.createObjectURL(file);
 
                 this.thumbnailFile = file;
                 this.thumbnailName = file.name;
@@ -329,16 +331,10 @@ export default {
 
                 this.dropzoneInstance.on('uploadprogress', (uploadFile, progress) => {
                     console.log(`[6] Upload progress: ${progress.toFixed(2)}%`);
-                    this.uploadProgress = progress;
-                    this.totalProgress = Math.floor(progress * 0.7); // Upload takes 70% of total progress
-                    this.progressStatus = `Uploading video: ${progress.toFixed(1)}%`;
                 });
 
                 this.dropzoneInstance.on('success', async (uploadFile, s3Response) => {
                     console.log('[7] S3 upload succeeded');
-                    this.uploadProgress = 100;
-                    this.totalProgress = 70;
-                    this.progressStatus = 'Processing video...';
                     try {
                         console.log('[8] Polling VdoCipher status for videoId =', this.currentVideoId);
                         await this.waitForVideoProcessing(this.currentVideoId);
@@ -419,5 +415,50 @@ export default {
 .video-container {
     border-radius: 8px;
     overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.video-container iframe {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.thumbnail-preview {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.thumbnail-preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.no-image-placeholder {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.no-image-placeholder i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.no-image-placeholder p {
+    margin: 0;
+    font-size: 0.9rem;
 }
 </style>

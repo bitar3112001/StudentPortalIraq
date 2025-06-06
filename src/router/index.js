@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { authService } from '@/services/api';
 
 import Home from '@/views/pages/home/home-index.vue'
 import HomeOne from '@/views/pages/home/home-one/index-one.vue';
@@ -95,6 +96,7 @@ import CourseWatch from '@/views/pages/courses/course-watch.vue';
 import CourseCart from '@/views/pages/courses/course-cart.vue';
 import CourseCheckout from '@/views/pages/courses/course-checkout.vue';
 import AddCourse from '@/views/pages/courses/add-course/add-course.vue';
+import EditCourse from '@/views/pages/courses/edit-course/edit-course.vue';
 
 
 import StudentIndex from '@/views/pages/dashboard/student/student-index.vue';
@@ -118,12 +120,21 @@ import StudentNotifications from '@/views/pages/dashboard/student/settings/stude
 import StudentBillingAddress from '@/views/pages/dashboard/student/settings/student-billing-address.vue';
 import InstructorWithdraw from '@/views/pages/dashboard/instructor/settings/instructor-withdraw.vue';
 
+import CourseCategories from '@/views/pages/dashboard/instructor/course-categories.vue';
+import CourseLevels from '@/views/pages/dashboard/instructor/course-levels.vue';
 
 const routes = [
   {
-    path: '/',
-    name: 'login',
-    component: login
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/pages/pages/authentication/login-index.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/home/index-2',
+    name: 'Home',
+    component: () => import('@/views/pages/home/home-two/home-two.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/register',
@@ -211,6 +222,9 @@ const routes = [
       { path: 'instructor-notifications', component: InstructorNotifications },
       { path: 'instructor-integrations', component: InstructorIntegrations },
       { path: 'instructor-withdraw', component: InstructorWithdraw },
+      { path: 'course-categories', component: CourseCategories },
+      { path: 'course-levels', component: CourseLevels },
+      { path: 'edit-course/:id', component: EditCourse },
     ]
   },
   {
@@ -352,11 +366,19 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  // Scroll to the top of the page
-  window.scrollTo({ top: 0, behavior: "smooth" });
-
-  // Continue with the navigation
-  next();
+  const isAuthenticated = authService.isAuthenticated();
+  
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    // Redirect to login if trying to access protected route while not authenticated
+    next('/login');
+  } else if (to.path === '/login' && isAuthenticated) {
+    // Redirect to home if trying to access login while authenticated
+    next('/home/index-2');
+  } else {
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    next();
+  }
 });
 
 export { router }

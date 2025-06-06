@@ -5,13 +5,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-12">
-                    <h2 class="breadcrumb-title mb-2">الدورات</h2>
+                    <h2 class="breadcrumb-title mb-2">Courses</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center mb-0">
                             <li class="breadcrumb-item">
-                                <router-link to="/home/index">الرئيسية</router-link>
+                                <router-link to="/home/index">Home</router-link>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">الدورات</li>
+                            <li class="breadcrumb-item active" aria-current="page">Courses</li>
                         </ol>
                     </nav>
                 </div>
@@ -32,7 +32,7 @@
                         <div class="col-xxl col-lg-4 col-md-6">
                             <div class="card bg-success">
                                 <div class="card-body">
-                                    <h6 class="fw-medium mb-1 text-white">الدورات المنشورة</h6>
+                                    <h6 class="fw-medium mb-1 text-white">Active Courses</h6>
                                     <h4 class="fw-bold text-white">{{ activeCoursesCount }}</h4>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                         <div class="col-xxl col-lg-4 col-md-6">
                             <div class="card bg-secondary">
                                 <div class="card-body">
-                                    <h6 class="fw-medium mb-1 text-white"> قيد المراجعة</h6>
+                                    <h6 class="fw-medium mb-1 text-white">Pending Courses</h6>
                                     <h4 class="fw-bold text-white">{{ pendingCoursesCount }}</h4>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                         <div class="col-xxl col-lg-4 col-md-6">
                             <div class="card bg-info">
                                 <div class="card-body">
-                                    <h6 class="fw-medium mb-1 text-white">الدورات المحذوفة</h6>
+                                    <h6 class="fw-medium mb-1 text-white">Draft Courses</h6>
                                     <h4 class="fw-bold text-white">{{ draftCoursesCount }}</h4>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                         <div class="col-xxl col-lg-4 col-md-6">
                             <div class="card bg-skyblue">
                                 <div class="card-body">
-                                    <h6 class="fw-medium mb-1 text-white">الدورات المجانية</h6>
+                                    <h6 class="fw-medium mb-1 text-white">Free Courses</h6>
                                     <h4 class="fw-bold text-white">{{ freeCoursesCount }}</h4>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                         <div class="col-xxl col-lg-4 col-md-6">
                             <div class="card bg-purple">
                                 <div class="card-body">
-                                    <h6 class="fw-medium mb-1 text-white">الدورات المدفوعة</h6>
+                                    <h6 class="fw-medium mb-1 text-white">Paid Courses</h6>
                                     <h4 class="fw-bold text-white">{{ paidCoursesCount }}</h4>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                     </div>
 
                     <div class="page-title d-flex align-items-center justify-content-between">
-                        <h5 class="fw-bold">الدورات</h5>
+                        <h5 class="fw-bold">Courses</h5>
                         <div class="d-flex align-items-center list-icons">
                             <router-link to="/instructor/instructor-course" class="me-2"><i
                                     class="isax isax-task"></i></router-link>
@@ -88,20 +88,20 @@
                                     <a href="javascript:void(0);"
                                         class="dropdown-toggle text-gray-6 btn rounded border d-inline-flex align-items-center"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        الحالة
+                                        Status
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end p-3">
                                         <li>
                                             <a href="javascript:void(0);" class="dropdown-item rounded-1"
-                                                @click="filterByStatus('published')">منشورة</a>
+                                                @click="filterByStatus('published')">Published</a>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0);" class="dropdown-item rounded-1"
-                                                @click="filterByStatus('pending')">قيد المراجعة</a>
+                                                @click="filterByStatus('pending')">Pending</a>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0);" class="dropdown-item rounded-1"
-                                                @click="filterByStatus('draft')">محذوفة</a>
+                                                @click="filterByStatus('draft')">Draft</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -112,7 +112,7 @@
                                 <span class="input-icon-addon">
                                     <i class="isax isax-search-normal-14"></i>
                                 </span>
-                                <input type="text" class="form-control form-control-md" placeholder="ابحث"
+                                <input type="text" class="form-control form-control-md" placeholder="Search"
                                     v-model="searchQuery" @input="searchCourses" />
                             </div>
                         </div>
@@ -122,11 +122,11 @@
                         <table class="table">
                             <thead class="thead-light">
                                 <tr>
-                                    <th>اسم الدورة</th>
-                                    <th>الطلاب</th>
-                                    <th>السعر</th>
-                                    <th>التقييمات</th>
-                                    <th>الحالة</th>
+                                    <th>Course Name</th>
+                                    <th>Students</th>
+                                    <th>Price</th>
+                                    <th>Ratings</th>
+                                    <th>Status</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -145,7 +145,7 @@
                                 </tr>
                                 <tr v-else-if="filteredCourses.length === 0">
                                     <td colspan="6" class="text-center">
-                                        لا يوجد دورات
+                                        No courses found
                                     </td>
                                 </tr>
                                 <tr v-for="course in filteredCourses" :key="course.id">
@@ -153,8 +153,7 @@
                                         <div class="d-flex align-items-center">
                                             <router-link :to="'/details/course-details-' + course.id"
                                                 class="avatar avatar-lg me-2 flex-shrink-0">
-                                                <img class="img-fluid object-fit-cover"
-                                                    :src="course.image ? `http://localhost:8000/storage/${course.image}` : ''"
+                                                <img class="img-fluid object-fit-cover" :src="course.image"
                                                     :alt="course.name" />
                                             </router-link>
 
@@ -168,17 +167,17 @@
                                                     <span
                                                         class="d-inline-flex fs-12 align-items-center me-2 pe-2 border-end">
                                                         <i class="isax isax-video-circle me-1 text-gray-9 fw-bold"></i>
-                                                        {{ course.lessons_count || 0 }} الدرس
+                                                        {{ course.lessons_count || 0 }} Lessons
                                                     </span>
                                                     <span
                                                         class="d-inline-flex fs-12 align-items-center me-2 pe-2 border-end">
                                                         <i
                                                             class="isax isax-message-question me-1 text-gray-9 fw-bold"></i>
-                                                        {{ course.quizzes_count || 0 }} الاختبارات
+                                                        {{ course.quizzes_count || 0 }} Quizzes
                                                     </span>
                                                     <span class="d-inline-flex fs-12 align-items-center">
                                                         <i class="isax isax-clock me-1 text-gray-9 fw-bold"></i>
-                                                        {{ course.duration || '00:00:00' }} ساعة
+                                                        {{ course.duration || '00:00:00' }} Hours
                                                     </span>
                                                 </div>
                                             </div>
@@ -282,9 +281,6 @@ import axios from 'axios';
 import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
-// Configure axios base URL
-axios.defaults.baseURL = 'http://localhost:8000'; // Change this to match your Laravel backend URL
-
 export default {
     name: 'InstructorCourse',
     setup() {
@@ -301,31 +297,14 @@ export default {
 
         const fetchCourses = async () => {
             try {
-                const token = localStorage.getItem('token');
-                if (!token) {
-                    router.push('/login');
-                    return;
-                }
-
                 loading.value = true;
-                const response = await axios.get('/online-courses', {
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                        'Accept': 'application/json'
-                    }
-                });
+                const response = await axios.get('/online-courses');
                 courses.value = response.data.data;
                 totalCourses.value = courses.value.length;
                 error.value = null;
             } catch (err) {
-                if (err.response?.status === 401) {
-                    // Token expired or invalid
-                    localStorage.removeItem('token');
-                    router.push('/login');
-                } else {
-                    error.value = 'Failed to fetch courses. Please try again later.';
-                    console.error('Error fetching courses:', err);
-                }
+                error.value = 'Failed to fetch courses. Please try again later.';
+                console.error('Error fetching courses:', err);
             } finally {
                 loading.value = false;
             }
@@ -426,31 +405,14 @@ export default {
             if (!courseToDelete.value) return;
 
             try {
-                const token = localStorage.getItem('token');
-                if (!token) {
-                    router.push('/login');
-                    return;
-                }
-
-                await axios.delete(`/online-courses/${courseToDelete.value.id}`, {
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                        'Accept': 'application/json'
-                    }
-                });
+                await axios.delete(`/online-courses/${courseToDelete.value.id}`);
                 await fetchCourses();
                 const modal = document.getElementById('delete_modal');
                 const bsModal = bootstrap.Modal.getInstance(modal);
                 bsModal.hide();
             } catch (err) {
-                if (err.response?.status === 401) {
-                    // Token expired or invalid
-                    localStorage.removeItem('token');
-                    router.push('/login');
-                } else {
-                    error.value = 'Failed to delete course. Please try again later.';
-                    console.error('Error deleting course:', err);
-                }
+                error.value = 'Failed to delete course. Please try again later.';
+                console.error('Error deleting course:', err);
             }
         };
 
