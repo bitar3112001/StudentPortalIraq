@@ -93,7 +93,7 @@ import { Form, Field } from "vee-validate";
 import * as Yup from "yup";
 import { authService } from "@/services/api";
 import Swal from 'sweetalert2';
-
+import { useStore } from 'vuex';
 export default {
   components: {
     Form,
@@ -102,10 +102,11 @@ export default {
   data() {
     return {
       showPassword: false,
-      isLoading: false,
     };
   },
   setup() {
+    const store = useStore();
+    const isLoading = ref(false);
     const schema = Yup.object().shape({
       register_id: Yup.string()
         .required("رقم التسجيل مطلوب"),
@@ -117,6 +118,7 @@ export default {
     const onSubmit = async (values) => {
       document.getElementById("register_id").innerHTML = "";
       document.getElementById("password").innerHTML = "";
+      isLoading.value = true;
 
       try {
         const loginData = {
@@ -132,6 +134,8 @@ export default {
           localStorage.setItem('role', JSON.stringify(response.role));
           localStorage.setItem('permissions', JSON.stringify(response.permissions));
           localStorage.setItem('auth_token', response.token);
+          
+          await store.dispatch('auth/fetchUserData');
 
           await Swal.fire({
             icon: 'success',
@@ -140,8 +144,14 @@ export default {
             timer: 2000,
             showConfirmButton: false
           });
-
-          router.push("/home/index-2");
+       
+          try {
+            await router.replace('/home/index-2');
+          } catch (navError) {
+            console.error('Navigation error:', navError);
+            // Fallback navigation
+            window.location.href = '/home/index-2';
+          }
         }
       } catch (error) {
         let errorMessage = "حدث خطأ أثناء تسجيل الدخول";
@@ -155,12 +165,15 @@ export default {
           title: 'خطأ في تسجيل الدخول',
           text: errorMessage
         });
+      } finally {
+        isLoading.value = false;
       }
     };
 
     return {
       schema,
       onSubmit,
+      isLoading
     };
   },
 };

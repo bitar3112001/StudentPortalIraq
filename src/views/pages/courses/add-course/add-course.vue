@@ -13,7 +13,9 @@
                             <li class="breadcrumb-item">
                                 <router-link to="/home/index">الرئيسية</router-link>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">اضافة دورة جديدة</li>
+
+                            <li  class="breadcrumb-item active"
+                                aria-current="page">اضافة دورة جديدة</li>
                         </ol>
                     </nav>
                 </div>
@@ -23,7 +25,7 @@
     <!-- /Breadcrumb -->
 
     <!-- Course add -->
-    <div class="content">
+    <div v-if="auth.hasPermission('add-online-courses')"  class="content">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
@@ -65,9 +67,11 @@
 </template>
 
 <script>
-import { ref, defineAsyncComponent } from 'vue';
+import { ref, defineAsyncComponent, onMounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 import { courseService } from '@/services/courseService';
+import { mapGetters } from 'vuex';
 
 export default {
     name: 'AddCourse',
@@ -76,8 +80,19 @@ export default {
         CourseMedia: defineAsyncComponent(() => import('./course-media.vue')),
         CoursePricing: defineAsyncComponent(() => import('./course-pricing.vue')),
     },
+
     setup() {
+        console.log('Add Course component is running!');
         const router = useRouter();
+        const store = useStore();
+        const isAuthenticated = computed(() => store.getters['auth/isAuthenticated']);
+        const currentUser = computed(() => store.getters['auth/currentUser']);
+        const role = computed(() => store.getters['auth/role'])
+        const userType = computed(() => store.getters['auth/user_type']);
+        const auth = computed(() => ({
+            hasPermission: (permission) => store.getters['auth/hasPermission'](permission)
+        }));
+        const is_instructor_online= computed(()=> store.getters['auth/is_online']);
         const n = ref(0);
         const formData = ref({
             // Course Information
@@ -279,12 +294,21 @@ export default {
             }
         };
 
+        // Check authentication on component mount
+        onMounted(async () => {
+
+            await store.dispatch('auth/fetchUserData');
+            console.log('Authentication state:', isAuthenticated.value, " and role: ", role.value, " and user type: ", userType.value);
+            console.log('current user: ', currentUser.value);
+        });
+
         return {
             n,
             steps,
             formData,
             updateFormData,
             nextStep,
+            auth,
         };
     },
 };

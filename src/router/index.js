@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import { authService } from '@/services/api';
+import { useStore } from 'vuex';
+import { computed } from 'vue';
 
 import Home from '@/views/pages/home/home-index.vue'
 import HomeOne from '@/views/pages/home/home-one/index-one.vue';
@@ -197,44 +199,46 @@ const routes = [
   {
     path: '/instructor',
     component: instructorIndex,
+    meta: { requiresAuth: true, permission: 'instructor' },
     children: [
-      { path: '', redirect: '/instructor/instructor-dashboard' },
-      { path: 'instructor-dashboard', component: instructorDashboard },
-      { path: 'instructor-profile', component: instructorProfile },
-      { path: 'instructor-course', component: instructorCourse },
-      { path: 'instructor-course-grid', component: InstructorCourseGrid },
-      { path: 'instructor-announcements', component: InstructorAnnouncements },
-      { path: 'instructor-assignment', component: InstructorAssignment },
-      { path: 'instructor-quiz', component: InstructorQuiz },
-      { path: 'instructor-quiz-results', component: InstructorQuizresults },
-      { path: 'instructor-quiz-questions', component: InstructorQuizquestions },
-      { path: 'instructor-certificate', component: InstructorCertificate },
-      { path: 'instructor-earnings', component: InstructorEarnings },
-      { path: 'instructor-payout', component: InstructorPayout },
-      { path: 'instructor-statements', component: InstructorStatements },
-      { path: 'instructor-message', component: InstructorMessage },
-      { path: 'instructor-tickets', component: InstructorTickets },
-      { path: 'instructor-settings', component: InstructorSettings },
-      { path: 'instructor-change-password', component: InstructorChangepassword },
-      { path: 'instructor-plans', component: InstructorPlans },
-      { path: 'instructor-social-profiles', component: InstructorSocialProfiles },
-      { path: 'instructor-linked-accounts', component: InstructorLinkedAccounts },
-      { path: 'instructor-notifications', component: InstructorNotifications },
-      { path: 'instructor-integrations', component: InstructorIntegrations },
-      { path: 'instructor-withdraw', component: InstructorWithdraw },
-      { path: 'course-categories', component: CourseCategories },
-      { path: 'course-levels', component: CourseLevels },
-      { path: 'edit-course/:id', component: EditCourse },
+      { path: '', redirect: '/instructor/instructor-dashboard'},
+      { path: 'instructor-dashboard', component: instructorDashboard, meta: { requiresAuth: true, permission: 'instructor' }  },
+      { path: 'instructor-profile', component: instructorProfile, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-course', component: instructorCourse, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-course-grid', component: InstructorCourseGrid, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-announcements', component: InstructorAnnouncements, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-assignment', component: InstructorAssignment, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-quiz', component: InstructorQuiz, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-quiz-results', component: InstructorQuizresults, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-quiz-questions', component: InstructorQuizquestions, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-certificate', component: InstructorCertificate, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-earnings', component: InstructorEarnings, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-payout', component: InstructorPayout, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-statements', component: InstructorStatements, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-message', component: InstructorMessage, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-tickets', component: InstructorTickets, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-settings', component: InstructorSettings, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-change-password', component: InstructorChangepassword, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-plans', component: InstructorPlans, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-social-profiles', component: InstructorSocialProfiles, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-linked-accounts', component: InstructorLinkedAccounts, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-notifications', component: InstructorNotifications, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-integrations', component: InstructorIntegrations, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'instructor-withdraw', component: InstructorWithdraw, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'course-categories', component: CourseCategories, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'course-levels', component: CourseLevels, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'edit-course/:id', component: EditCourse, meta: { requiresAuth: true, permission: 'instructor' } },
     ]
   },
   {
     path: '/instructor-students',
     component: InstructorStudents,
+    meta: { requiresAuth: true, permission: 'instructor' },
     children: [
       { path: '', redirect: '/instructor-students/student-grid' },
-      { path: 'student-grid', component: StudentGrid },
-      { path: 'student-list', component: StudentList },      
-      { path: 'student-details', component: StudentDetails },
+      { path: 'student-grid', component: StudentGrid, meta: { requiresAuth: true, permission: 'instructor' } },
+      { path: 'student-list', component: StudentList, meta: { requiresAuth: true, permission: 'instructor' } },      
+      { path: 'student-details', component: StudentDetails, meta: { requiresAuth: true, permission: 'instructor' } },
     ]
   },
   {
@@ -320,36 +324,37 @@ const routes = [
     component: CoursesIndex,
     children: [
       { path: '', redirect: '/courses/course-resume' },
-      { path: 'course-resume', component: CourseResume },
-      { path: 'course-watch', component: CourseWatch },
-      { path: 'cart', component: CourseCart },
-      { path: 'checkout', component: CourseCheckout },
-      { path: 'add-course', component: AddCourse },
+      { path: 'course-resume', component: CourseResume, meta: { requiresAuth: true } },
+      { path: 'course-watch', component: CourseWatch, meta: { requiresAuth: true } },
+      { path: 'cart', component: CourseCart, meta: { requiresAuth: true } },
+      { path: 'checkout', component: CourseCheckout, meta: { requiresAuth: true } },
+      { path: 'add-course', component: AddCourse, meta: { requiresAuth: true, permission: 'instructor' }  },
     ]
   },
   {
     path: '/students',
     component: StudentIndex,
+    meta: { requiresAuth: true, permission: 'student' },
     children: [
       { path: '', redirect: '/students/student-dashboard' },
-      { path: 'student-dashboard', component: StudentDashboard },
-      { path: 'student-profile', component: StudentProfile },
-      { path: 'student-courses', component: StudentCourses },
-      { path: 'student-certificates', component: StudentCertificates },
-      { path: 'student-wishlist', component: StudentWishlist },
-      { path: 'student-reviews', component: StudentReviews },
-      { path: 'student-quiz', component: StudentQuiz },
-      { path: 'student-quiz-questions', component: StudentQuizQuestions },
-      { path: 'student-order-history', component: StudentOrderHistory },
-      { path: 'student-referral', component: StudentReferral },
-      { path: 'student-messages', component: StudentMessages },
-      { path: 'student-tickets', component: StudentTickets },
-      { path: 'student-settings', component: StudentSettings },
-      { path: 'student-change-password', component: StudentChangePassword },
-      { path: 'student-social-profile', component: StudentSocialProfile },
-      { path: 'student-linked-accounts', component: StudentLinkedAccounts },
-      { path: 'student-notifications', component: StudentNotifications },
-      { path: 'student-billing-address', component: StudentBillingAddress },
+      { path: 'student-dashboard', component: StudentDashboard, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-profile', component: StudentProfile, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-courses', component: StudentCourses, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-certificates', component: StudentCertificates, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-wishlist', component: StudentWishlist, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-reviews', component: StudentReviews, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-quiz', component: StudentQuiz, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-quiz-questions', component: StudentQuizQuestions, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-order-history', component: StudentOrderHistory, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-referral', component: StudentReferral, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-messages', component: StudentMessages, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-tickets', component: StudentTickets, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-settings', component: StudentSettings, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-change-password', component: StudentChangePassword, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-social-profile', component: StudentSocialProfile, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-linked-accounts', component: StudentLinkedAccounts, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-notifications', component: StudentNotifications, meta: { requiresAuth: true, permission: 'student' } },
+      { path: 'student-billing-address', component: StudentBillingAddress, meta: { requiresAuth: true, permission: 'student' } },
     ]
   },
  
@@ -365,20 +370,68 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
-  const isAuthenticated = authService.isAuthenticated();
+router.beforeEach(async (to, from, next) => {
+  const store = useStore();
   
-  if (to.meta.requiresAuth && !isAuthenticated) {
-    // Redirect to login if trying to access protected route while not authenticated
-    next('/login');
-  } else if (to.path === '/login' && isAuthenticated) {
-    // Redirect to home if trying to access login while authenticated
-    next('/home/index-2');
-  } else {
-    // Scroll to the top of the page
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    next();
+  
+  // Initialize auth state if not already initialized
+  if (!store.getters['auth/isLoaded']) {
+    try {
+      await store.dispatch('auth/initialize');
+    } catch (error) {
+      console.error('Error initializing auth:', error);
+      if (to.meta.requiresAuth) {
+        next('/login');
+        return;
+      }
+    }
   }
+
+  const isAuthenticated = computed(() => store.getters['auth/isAuthenticated']);
+  const currentUser = computed(() => store.getters['auth/currentUser']);
+  const role = computed(() => store.getters['auth/role']);
+  const userType = computed(() => store.getters['auth/user_type']);
+  const is_instructor_online = computed(() => store.getters['auth/is_online']);
+
+  const auth = computed(() => ({
+    hasPermission: async (permission) => {
+      if (permission === 'all') return true;
+      if (permission === 'instructor') return userType.value == 1 && is_instructor_online.value;
+      if (permission === 'student') return userType.value == 2;
+      return store.getters['auth/hasPermission'](permission);
+    }
+  }));
+
+  // Check if route requires authentication
+  if (to.meta.requiresAuth && !isAuthenticated.value) {
+    next('/login');
+    return;
+  }
+
+  // Check if route requires specific permission
+  if (to.meta.permission) {
+    const hasPermission = await auth.value.hasPermission(to.meta.permission);
+    if (!hasPermission) {
+      next('/error-404');
+      return;
+    }
+  }
+
+  // Redirect authenticated users away from login page
+  if (to.path === '/login' && isAuthenticated.value) {
+    next('/home/index-2');
+    return;
+  }
+
+  // Redirect root to home for authenticated users
+  if (to.path === '/' && isAuthenticated.value) {
+    next('/home/index-2');
+    return;
+  }
+
+  // Scroll to top and proceed
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  next();
 });
 
 export { router }

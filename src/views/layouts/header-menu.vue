@@ -10,22 +10,17 @@
         </div>
     
         <ul class="main-nav" :class="{ active: isActive }">
-            <template v-for="item in HeaderData" :key="item.tittle">
+            <template v-for="item in filteredMenuItems" :key="item.tittle">
                 <li class="has-submenu megamenu" @mouseenter="activateMenu" :class="{ 'active': isActiveRoute(item.active_link) }" 
                     @mouseleave="deactivateMenu" v-if="item.separateRoute === true && item.tittle === 'الرئيسية'">
-                    <a href="javascript:void(0);" @click="toggleTab(item)">{{ item.tittle }}
-                        <!-- <i class="fas fa-chevron-down"></i> -->
-                    </a>
+                    <a href="javascript:void(0);" @click="toggleTab(item)">{{ item.tittle }}</a>
                     <ul class="submenu mega-submenu" :class="{ 'd-block': item.showAsTab }">
                         <li>
                             <div class="megamenu-wrapper">
                                 <div class="row">
-                                    <div class="col-lg-2" v-for="menu in item.menu" :key="menu.menuValue">
+                                    <div class="col-lg-2" v-for="menu in filteredSubMenuItems(item.menu)" :key="menu.menuValue">
                                         <div class="single-demo" :class="{ 'active': isActiveRoute(menu.route) }">
                                             <div class="demo-img">
-                                                <!-- <router-link :to="menu.route">
-                                                    <img :src="require(@/assets/img/home/${menu.image})" class="img-fluid" alt="img">
-                                                </router-link> -->
                                             </div>
                                             <div class="demo-info">
                                                 <router-link :to="menu.route">{{menu.menuValue}}</router-link>
@@ -40,24 +35,23 @@
                 <li v-else-if="item.separateRoute === false" class="has-submenu" :class="{ 'active': isActiveRoute(item.active_link) || isActiveRoute(item.active_link1) || isActiveRoute(item.active_link2) || isActiveRoute(item.active_link3)}">
                     <a href="javascript:void(0);" @click="toggleTab(item)">
                         {{ item.tittle }}
-                         <!-- <i class="fas fa-chevron-down"></i> -->
                     </a>
                     <ul class="submenu" :class="{ 'd-block': item.showAsTab }">
-                        <template v-for="menuItem in item.menu" :key="menuItem.menuValue">
+                        <template v-for="menuItem in filteredSubMenuItems(item.menu)" :key="menuItem.menuValue">
                             <li v-if="menuItem.hasSubRoute === false" :class="{ 'active': isActiveRoute(menuItem.active_link) }">
                                 <router-link :to="{ 'path': menuItem.route }">{{ menuItem.menuValue }}</router-link>
                             </li>
                             <li v-else-if="menuItem.hasSubRoute === true" class="has-submenu" :class="{ 'active': isActiveRoute(menuItem.active_link) }">
                                 <a href="javascript:void(0);" @click="toggleTab(menuItem)">{{ menuItem.menuValue }}</a>
                                 <ul class="submenu" :class="{ 'd-block': menuItem.showAsTab }">
-                                    <template v-for="subMenu in menuItem.subMenus" :key="subMenu.menuValue">
+                                    <template v-for="subMenu in filteredSubMenuItems(menuItem.subMenus)" :key="subMenu.menuValue">
                                         <li v-if="subMenu.hasSubRoute === false" :class="{ 'active': isActiveRoute(subMenu.active_link) }">
                                             <router-link :to="{ 'path': subMenu.route }">{{ subMenu.menuValue }}</router-link>
                                         </li>
                                         <li class="has-submenu" v-if="subMenu.hasSubRoute === true" :class="{ 'active': isActiveRoute(subMenu.active_link) }">
                                             <a href="javascript:void(0);" @click="toggleTab(subMenu)">{{ subMenu.menuValue }}</a>
                                             <ul class="submenu" :class="{ 'd-block': subMenu.showAsTab }">
-                                                <li v-for="subMenuItems in subMenu.subMenusTwo" :key="subMenuItems.menuValue" :class="{ 'active': isActiveRoute(subMenuItems.active_link) }">
+                                                <li v-for="subMenuItems in filteredSubMenuItems(subMenu.subMenusTwo)" :key="subMenuItems.menuValue" :class="{ 'active': isActiveRoute(subMenuItems.active_link) }">
                                                     <router-link :to="{ 'path': subMenuItems.route }">{{ subMenuItems.menuValue }}</router-link>
                                                 </li>
                                             </ul>
@@ -131,8 +125,10 @@
     </template>
     
     <script>
-    import { ref } from "vue";
+    import { ref, computed } from "vue";
     import { useRoute } from "vue-router";
+    import { useStore } from 'vuex';
+    import { usePermissions } from '@/composables/usePermissions';
     import HeaderData from '@/assets/json/header-menu.json'
     
     export default {
@@ -168,6 +164,8 @@
         },
         setup() {
             const route = useRoute();
+            const store = useStore();
+            const { hasPermission } = usePermissions();
             const isActive = ref(false);
         
             const activateMenu = () => {
@@ -182,13 +180,26 @@
             const isActiveRoute = (activeLink) => {
                 return route.path.includes(activeLink);
             };
+
+            // Filter menu items based on permissions
+            const filteredMenuItems = computed(() => {
+                return HeaderData.filter(item => hasPermission(item.permission));
+            });
+
+            // Filter submenu items based on permissions
+            const filteredSubMenuItems = (items) => {
+                return items.filter(item => hasPermission(item.permission));
+            };
         
             return {
                 isActive,
                 activateMenu,
                 deactivateMenu,
                 route,
-                isActiveRoute
+                isActiveRoute,
+                filteredMenuItems,
+                filteredSubMenuItems,
+                hasPermission
             };
         },
     }
