@@ -1,12 +1,15 @@
 <script>
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted, watch, computed } from "vue";
 import { useRoute } from "vue-router";
+import { useStore } from 'vuex';
 
 export default {
+
     data() {
         return {
             isFixed: false,
             isSidebarOpen: false,
+          
         }
     },
     methods: {
@@ -22,6 +25,14 @@ export default {
             this.isSidebarOpen = false;
             document.documentElement.classList.remove("menu-opened");
         },
+        async handleLogout() {
+            try {
+                await this.$store.dispatch('auth/logout');
+                this.$router.push('/login');
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        }
     },
     mounted() {
         // Attach scroll event listener
@@ -34,6 +45,8 @@ export default {
     setup() {
         const isDarkMode = ref(false);
         const route = useRoute();  
+        const store = useStore();
+        const isAuthenticated = computed(() => store.getters['auth/isAuthenticated']);
 
         const toggleDarkMode = () => {
             if (isDarkMode.value) {
@@ -51,8 +64,10 @@ export default {
             isDarkMode.value = darkMode === "enabled";
         };
 
-        onMounted(() => {
+        onMounted(async () => {
             initializeDarkMode();
+            await store.dispatch('auth/fetchUserData');
+            
         });
 
         watch(isDarkMode, (newVal) => {
@@ -67,6 +82,7 @@ export default {
             isDarkMode,
             toggleDarkMode,
             route,  // Pass the route object to the template
+            isAuthenticated, // Add the computed property to the return object
         };
     },
 }
@@ -225,14 +241,14 @@ export default {
                                 <i class="isax" :class="[isDarkMode ? 'isax-sun-15' : 'isax-moon']"></i>
                             </a>
                         </div>
-                        <div class="icon-btn me-3">
+                        <!-- <div class="icon-btn me-3">
                             <router-link to="/courses/cart" class="position-relative">
                                 <i class="isax isax-shopping-cart5"></i>
                                 <span class="count-icon bg-success p-1 rounded-pill text-white fs-10 fw-bold">1</span>
                             </router-link>
-                        </div>
+                        </div> -->
                         <div v-if="route.path !== '/home/index-2' && route.path !== '/home/index-5'">
-                            <router-link to="/" class="btn btn-primary d-inline-flex align-items-center me-2">
+                            <router-link  to="/" class="btn btn-primary d-inline-flex align-items-center me-2">
                                 تسجيل الدخول
                             </router-link>
                             <router-link to="/register" class="btn btn-secondary me-0">
@@ -240,12 +256,20 @@ export default {
                             </router-link>
                         </div>
                         <div v-if="route.path === '/home/index-2' || route.path === '/home/index-5'">
-                            <router-link to="/" class="btn btn-light d-inline-flex align-items-center me-2">
-                                <i class="isax isax-lock-circle me-2"></i>تسجيل الدخول
-                            </router-link>
-                            <router-link to="/register" class="btn btn-secondary me-0">
-                                <i class="isax isax-user-edit me-2"></i>تسجيل
-                            </router-link>
+                            <router-link v-if="!isAuthenticated" to="/" class="btn btn-light d-inline-flex align-items-center me-2">
+                   
+                   <i class="isax isax-lock-circle me-2"> </i>
+                       تسجيل الدخول
+                  
+               </router-link>
+               <router-link v-if="!isAuthenticated" to="/register" class="btn btn-secondary me-0">
+                   <i class="isax isax-user-edit me-2"></i>
+                   تسجيل
+               </router-link>
+               <button v-if="isAuthenticated" @click="handleLogout" class="btn btn-danger me-0">
+                   <i class="isax isax-user-edit me-2"></i>
+                   تسجيل الخروج 
+               </button>
                         </div>
                     </div>
                 </div>                
@@ -300,18 +324,27 @@ export default {
                             <i class="isax" :class="[isDarkMode ? 'isax-sun-15' : 'isax-moon']"></i>
                         </a>
                     </div>
-                    <div class="icon-btn me-3">
+                    <!-- <div class="icon-btn me-3">
                         <router-link to="/courses/cart" class="position-relative">
                             <i class="isax isax-shopping-cart5"></i>
                             <span class="count-icon bg-success p-1 rounded-pill text-white fs-10 fw-bold">1</span>
                         </router-link>
-                    </div>
-                    <router-link to="/" class="btn btn-light d-inline-flex align-items-center me-2">
-                        <i class="isax isax-lock-circle me-2">تسجيل الدخول</i>
+                    </div> -->
+                    
+                    <router-link v-if="!isAuthenticated" to="/" class="btn btn-light d-inline-flex align-items-center me-2">
+                   
+                        <i class="isax isax-lock-circle me-2"> </i>
+                            تسجيل الدخول
+                       
                     </router-link>
-                    <router-link to="/register" class="btn btn-secondary me-0">
-                        <i class="isax isax-user-edit me-2">تسجيل</i>
+                    <router-link v-if="!isAuthenticated" to="/register" class="btn btn-secondary me-0">
+                        <i class="isax isax-user-edit me-2"></i>
+                        تسجيل
                     </router-link>
+                    <button v-if="isAuthenticated" @click="handleLogout" class="btn btn-danger me-0">
+                        <i class="isax isax-user-edit me-2"></i>
+                        تسجيل الخروج 
+                    </button>
                 </div>
                 <div class="header-btn d-flex align-items-center" v-if="route.path.startsWith('/instructor/') ||  route.path.startsWith('/instructor-students/')">
                     <div class="icon-btn me-2">
@@ -319,12 +352,12 @@ export default {
                             <i class="isax" :class="[isDarkMode ? 'isax-sun-15' : 'isax-moon']"></i>
                         </a>
                     </div>
-                    <div class="icon-btn me-3">
+                    <!-- <div class="icon-btn me-3">
                         <router-link to="/courses/cart" class="position-relative">
                             <i class="isax isax-shopping-cart5"></i>
                             <span class="count-icon bg-success p-1 rounded-pill text-white fs-10 fw-bold">1</span>
                         </router-link>
-                    </div>
+                    </div> -->
                     <div class="dropdown profile-dropdown">
                         <a href="javascript:void(0);" class="d-flex align-items-center" data-bs-toggle="dropdown">
                             <span class="avatar">
@@ -374,12 +407,12 @@ export default {
                             <i class="isax" :class="[isDarkMode ? 'isax-sun-15' : 'isax-moon']"></i>
                         </a>
                     </div>
-                    <div class="icon-btn me-3">
+                    <!-- <div class="icon-btn me-3">
                         <router-link to="/courses/cart" class="position-relative">
                             <i class="isax isax-shopping-cart5"></i>
                             <span class="count-icon bg-success p-1 rounded-pill text-white fs-10 fw-bold">1</span>
                         </router-link>
-                    </div>
+                    </div> -->
                     <div class="dropdown profile-dropdown">
                         <a href="javascript:void(0);" class="d-flex align-items-center" data-bs-toggle="dropdown">
                             <span class="avatar">
@@ -403,9 +436,9 @@ export default {
                                 <li>
                                     <router-link class="dropdown-item d-inline-flex align-items-center rounded fw-medium" to="/students/student-quiz"><i class="isax isax-award me-2"></i>Quiz Attempts</router-link>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <router-link class="dropdown-item d-inline-flex align-items-center rounded fw-medium2" to="/students/student-order-history"><i class="isax isax-shopping-cart me-2"></i>Order History</router-link>
-                                </li>
+                                </li> -->
                                 <li>
                                     <router-link class="dropdown-item d-inline-flex align-items-center rounded fw-medium" to="/students/student-messages"><i class="isax isax-messages-3 me-2"></i>Messages<span class="message-count">2</span></router-link>
                                 </li>
