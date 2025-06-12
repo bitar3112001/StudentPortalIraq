@@ -248,7 +248,7 @@ export default {
                             </router-link>
                         </div> -->
                         <div v-if="route.path !== '/home/index-2' && route.path !== '/home/index-5'">
-                            <router-link to="/" class="btn btn-primary d-inline-flex align-items-center me-2">
+                            <router-link  to="/" class="btn btn-primary d-inline-flex align-items-center me-2">
                                 تسجيل الدخول
                             </router-link>
                             <router-link to="/register" class="btn btn-secondary me-0">
@@ -256,12 +256,20 @@ export default {
                             </router-link>
                         </div>
                         <div v-if="route.path === '/home/index-2' || route.path === '/home/index-5'">
-                            <router-link to="/" class="btn btn-light d-inline-flex align-items-center me-2">
-                                <i class="isax isax-lock-circle me-2"></i>تسجيل الدخول
-                            </router-link>
-                            <router-link to="/register" class="btn btn-secondary me-0">
-                                <i class="isax isax-user-edit me-2"></i>تسجيل
-                            </router-link>
+                            <router-link v-if="!isAuthenticated" to="/" class="btn btn-light d-inline-flex align-items-center me-2">
+                   
+                   <i class="isax isax-lock-circle me-2"> </i>
+                       تسجيل الدخول
+                  
+               </router-link>
+               <router-link v-if="!isAuthenticated" to="/register" class="btn btn-secondary me-0">
+                   <i class="isax isax-user-edit me-2"></i>
+                   تسجيل
+               </router-link>
+               <button v-if="isAuthenticated" @click="handleLogout" class="btn btn-danger me-0">
+                   <i class="isax isax-user-edit me-2"></i>
+                   تسجيل الخروج 
+               </button>
                         </div>
                     </div>
                 </div>                

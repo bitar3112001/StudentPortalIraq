@@ -120,7 +120,7 @@
           <div class="col-md-6">
             <div class="text-center text-md-start">
               <p class="text-white">
-                جميع الحقوق محفوظة © ٢٠٢٥ دريمز إل إم إس.
+                جميع الحقوق محفوظة © ٢٠٢٥ .Youbee.ai
               </p>
             </div>
           </div>

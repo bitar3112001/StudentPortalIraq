@@ -11,7 +11,10 @@
           <div class="loginbox">
             <div class="w-100">
               <div class="d-flex align-items-center justify-content-between login-header">
-                <img src="@/assets/img/logo1.jpg" class="img-fluid" alt="Logo" width="60px" />
+                <div>
+                  <img src="@/assets/img/logo1.jpg" class="img-fluid" alt="Logo" width="60px" />
+                  <h3 >منصة احتراف</h3>
+                </div>
                 <router-link to="/home/index-2" class="link-1">العودة للرئيسية</router-link>
               </div>
               <h1 class="fs-32 fw-bold topic">تسجيل الدخول إلى حسابك</h1>
@@ -65,12 +68,7 @@
                 أو
               </div>
 
-              <div class="d-flex align-items-center justify-content-center mb-3">
-                <a href="javascript:void(0);" class="btn btn-light me-2"><img src="@/assets/img/icons/google.svg"
-                    alt="img" class="me-2" />جوجل</a>
-                <a href="javascript:void(0);" class="btn btn-light"><img src="@/assets/img/icons/facebook.svg" alt="img"
-                    class="me-2" />فيسبوك</a>
-              </div>
+             
 
               <div class="fs-14 fw-normal d-flex align-items-center justify-content-center">
                 ليس لديك حساب؟<router-link to="/register" class="link-2 ms-1">
@@ -130,10 +128,13 @@ export default {
 
         if (response.token) {
           // Store user data in localStorage
+       
           localStorage.setItem('user', JSON.stringify(response.user));
           localStorage.setItem('role', JSON.stringify(response.role));
           localStorage.setItem('permissions', JSON.stringify(response.permissions));
           localStorage.setItem('auth_token', response.token);
+
+
           
           await store.dispatch('auth/fetchUserData');
 
@@ -146,6 +147,8 @@ export default {
           });
        
           try {
+            store.commit('auth/SET_TOKEN', response.token);      // <─ add this
+store.commit('auth/SET_USER',  response.user); 
             await router.replace('/home/index-2');
           } catch (navError) {
             console.error('Navigation error:', navError);

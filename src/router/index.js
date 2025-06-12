@@ -378,6 +378,7 @@ router.beforeEach(async (to, from, next) => {
   if (!store.getters['auth/isLoaded']) {
     try {
       await store.dispatch('auth/initialize');
+      await store.dispatch('auth/fetchUserData');
     } catch (error) {
       console.error('Error initializing auth:', error);
       if (to.meta.requiresAuth) {

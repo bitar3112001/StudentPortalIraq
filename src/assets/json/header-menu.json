@@ -3,62 +3,11 @@
   {
     "tittle": "الرئيسية",
     "active_link": "/home/",
+    "route": "/home/index-2",
     "showAsTab": false,
-    "separateRoute": true,
+    "separateRoute": false,
     "permission": "all",
-    "menu": [
-     
-      {
-        "menuValue": "الرئيسية الثانية",
-        "route": "/home/index-2",
-        "image":"home-02.jpg",
-        "hasSubRoute": false,
-        "showSubRoute": false,
-        "active_link": "/home/index-2",
-        "permission":"all",
-        "subMenus": []
-      },
-      {
-        "menuValue": "الرئيسية الثالثة",
-        "image":"home-03.jpg",
-        "route": "/home/index-3",
-        "hasSubRoute": false,
-        "showSubRoute": false,
-        "active_link": "/home/index-3",
-        "permission":"all",
-        "subMenus": []
-      },
-      {
-        "menuValue": "الرئيسية الرابعة",
-        "route": "/home/index-4",
-        "image":"home-04.jpg",
-        "hasSubRoute": false,
-        "showSubRoute": false,
-        "active_link": "/home/index-4",
-        "permission":"all",
-        "subMenus": []
-      },
-      {
-        "menuValue": "الرئيسية الخامسة",
-        "image":"home-05.jpg",
-        "route": "/home/index-5",
-        "hasSubRoute": false,
-        "showSubRoute": false,
-        "active_link": "/home/index-5",
-        "permission":"all",
-        "subMenus": []
-      },
-      {
-        "menuValue": "الرئيسية السادسة",
-        "route": "/home/index-6",
-        "image":"home-06.jpg",
-        "hasSubRoute": false,
-        "showSubRoute": false,
-        "active_link": "/home/index-6",
-        "permission":"all",
-        "subMenus": []
-      }
-    ]
+    "menu":[]
   },
   {
     "tittle": "الدورات",
@@ -614,112 +563,6 @@
         "subMenus": []
       }
     ]
-  },
-  {
-    "tittle": "المدونة",
-    "active_link": "/blog-layouts/",
-    "active_link1": "/blogs/",
-    "showAsTab": false,
-    "separateRoute": false,
-    "permission": "all",
-    "menu": [
-      {
-        "menuValue": "تخطيطات المدونة",
-        "hasSubRoute": true,
-        "showSubRoute": true,
-        "showAsTab2": false,
-        "active_link": "/blog-layouts/",
-        "subMenus": [
-          {
-            "menuValue": "شبكة المدونة 1",
-            "route": "/blog-layouts/blog-grid",
-            "active_link": "/blog-layouts/blog-grid",
-            "hasSubRoute": false,
-            "showSubRoute": false,
-            "subMenus": []
-          },
-          {
-            "menuValue": "شبكة المدونة 2",
-            "route": "/blog-layouts/blog-2-grid",
-            "hasSubRoute": false,
-            "showSubRoute": false,
-            "subMenus": []
-          },
-          {
-            "menuValue": "شبكة المدونة 3",
-            "route": "/blog-layouts/blog-3-grid",
-            "active_link": "/blog-layouts/blog-3-grid",
-            "hasSubRoute": false,
-            "showSubRoute": false,
-            "subMenus": []
-          },
-          {
-            "menuValue": "عرض المدونة المتحرك",
-            "route": "/blog-layouts/blog-carousal",
-            "active_link": "/blog-layouts/blog-carousal",
-            "hasSubRoute": false,
-            "showSubRoute": false,
-            "subMenus": []
-          },
-          {
-            "menuValue": "تصميم المدونة",
-            "route": "/blog-layouts/blog-masonry",
-            "active_link": "/blog-layouts/blog-masonry",
-            "hasSubRoute": false,
-            "showSubRoute": false,
-            "subMenus": []
-          },
-          {
-            "menuValue": "الشريط الجانبي الأيسر للمدونة",
-            "route": "/blog-layouts/blog-left-sidebar",
-            "active_link": "/blog-layouts/blog-left-sidebar",
-            "hasSubRoute": false,
-            "showSubRoute": false,
-            "subMenus": []
-          },
-          {
-            "menuValue": "الشريط الجانبي الأيمن للمدونة",
-            "route": "/blog-layouts/blog-right-sidebar",
-            "active_link": "/blog-layouts/blog-right-sidebar",
-            "hasSubRoute": false,
-            "showSubRoute": false,
-            "subMenus": []
-          }
-        ]
-      },
-      {
-        "menuValue": "تفاصيل المدونة",
-        "hasSubRoute": true,
-        "showSubRoute": true,
-        "showAsTab2": false,
-        "active_link": "/blogs/",
-        "subMenus": [
-          {
-            "menuValue": "تفاصيل المدونة",
-            "route": "/blogs/blog-details",
-            "active_link": "/blogs/blog-details",
-            "hasSubRoute": false,
-            "showSubRoute": false,
-            "subMenus": []
-          },
-          {
-            "menuValue": "تفاصيل المدونة مع الشريط الجانبي الأيسر",
-            "route": "/blogs/blog-details-left-sidebar",
-            "active_link": "/blogs/blog-details-left-sidebar",
-            "hasSubRoute": false,
-            "showSubRoute": false,
-            "subMenus": []
-          },
-          {
-            "menuValue": "تفاصيل المدونة مع الشريط الجانبي الأيمن",
-            "route": "/blogs/blog-details-right-sidebar",
-            "active_link": "/blogs/blog-details-right-sidebar",
-            "hasSubRoute": false,
-            "showSubRoute": false,
-            "subMenus": []
-          }
-        ]
-      }
-    ]
   }
+  
 ]

@@ -3,7 +3,7 @@
     <div class="row">
       <!-- Login Banner -->
       <div class="col-md-6 login-bg d-none d-lg-flex">
-        <div class="login-carousel">
+        
           <div>
             <div class="login-carousel-section mb-3">
               <div class="login-banner">
@@ -11,48 +11,15 @@
               </div>
               <div class="mentor-course text-center">
                 <h3 class="mb-2">
-                  Welcome to <br />Dreams<span class="text-secondary">LMS</span> Courses.
+                  اهلا وسهلا<br />منصة احتراف <span class="text-secondary"></span> التعليمية.
                 </h3>
-                <p>
-                  Platform designed to help organizations, educators, and learners manage,
-                  deliver, and track learning and training activities.
-                </p>
+            <p>منصة "احتراف" مصممة لمساعدة الطلاب والمؤسسات التعليمية في العراق على إدارة وتتبع الأنشطة التعليمية وتوفير تجربة تعليمية متكاملة وسهلة الوصول.</p>
               </div>
             </div>
           </div>
-          <div>
-            <div class="login-carousel-section mb-3">
-              <div class="login-banner">
-                <img src="@/assets/img/auth/auth-1.svg" class="img-fluid" alt="Logo" />
-              </div>
-              <div class="mentor-course text-center">
-                <h3 class="mb-2">
-                  Welcome to <br />Dreams<span class="text-secondary">LMS</span> Courses.
-                </h3>
-                <p>
-                  Platform designed to help organizations, educators, and learners manage,
-                  deliver, and track learning and training activities.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="login-carousel-section mb-3">
-              <div class="login-banner">
-                <img src="@/assets/img/auth/auth-1.svg" class="img-fluid" alt="Logo" />
-              </div>
-              <div class="mentor-course text-center">
-                <h3 class="mb-2">
-                  Welcome to <br />Dreams<span class="text-secondary">LMS</span> Courses.
-                </h3>
-                <p>
-                  Platform designed to help organizations, educators, and learners manage,
-                  deliver, and track learning and training activities.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        
+          
+        
       </div>
       <!-- /Login Banner -->
 
@@ -62,10 +29,13 @@
           <div class="loginbox">
             <div class="w-100">
               <div class="d-flex align-items-center justify-content-between login-header">
-                <img src="@/assets/img/logo.svg" class="img-fluid" alt="Logo" />
-                <router-link to="/home/" class="link-1">Back to Home</router-link>
+                <div>
+                  <img src="@/assets/img/logo1.jpg" class="img-fluid" alt="Logo" width="60px" />
+                  <h3 >منصة احتراف</h3>
+                </div>
+                <router-link to="/home/index-2" class="link-1">العودة للرئيسية</router-link>
               </div>
-              <h1 class="fs-32 fw-bold topic">Sign up</h1>
+              <h1 class="fs-32 fw-bold topic">تسجيل</h1>
               <Form @submit="onSubmit" :validation-schema="schema" v-slot="{ errors }">
                 <div class="mb-3 position-relative">
                   <label class="form-label"
@@ -221,27 +191,12 @@
                 Or
               </div>
 
-              <div class="d-flex align-items-center justify-content-center mb-3">
-                <a href="javascript:void(0);" class="btn btn-light me-2"
-                  ><img
-                    src="@/assets/img/icons/google.svg"
-                    alt="img"
-                    class="me-2"
-                  />Google</a
-                >
-                <a href="javascript:void(0);" class="btn btn-light"
-                  ><img
-                    src="@/assets/img/icons/facebook.svg"
-                    alt="img"
-                    class="me-2"
-                  />Facebook</a
-                >
-              </div>
+        
 
               <div
                 class="fs-14 fw-normal d-flex align-items-center justify-content-center"
               >
-                Already you have an account?<router-link to="/" class="link-2 ms-1">
+                Already you have an account?<router-link to="/register" class="link-2 ms-1">
                   Login</router-link
                 >
               </div>

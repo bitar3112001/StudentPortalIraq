@@ -11,26 +11,9 @@
     
         <ul class="main-nav" :class="{ active: isActive }">
             <template v-for="item in filteredMenuItems" :key="item.tittle">
-                <li class="has-submenu megamenu" @mouseenter="activateMenu" :class="{ 'active': isActiveRoute(item.active_link) }" 
-                    @mouseleave="deactivateMenu" v-if="item.separateRoute === true && item.tittle === 'الرئيسية'">
-                    <a href="javascript:void(0);" @click="toggleTab(item)">{{ item.tittle }}</a>
-                    <ul class="submenu mega-submenu" :class="{ 'd-block': item.showAsTab }">
-                        <li>
-                            <div class="megamenu-wrapper">
-                                <div class="row">
-                                    <div class="col-lg-2" v-for="menu in filteredSubMenuItems(item.menu)" :key="menu.menuValue">
-                                        <div class="single-demo" :class="{ 'active': isActiveRoute(menu.route) }">
-                                            <div class="demo-img">
-                                            </div>
-                                            <div class="demo-info">
-                                                <router-link :to="menu.route">{{menu.menuValue}}</router-link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                <li class="megamenu" @mouseenter="activateMenu" :class="{ 'active': isActiveRoute(item.active_link) }" 
+                    @mouseleave="deactivateMenu" v-if=" item.tittle === 'الرئيسية'">
+                    <router-link :to="{ 'path': item.route }">{{ item.tittle }}</router-link>
                 </li>
                 <li v-else-if="item.separateRoute === false" class="has-submenu" :class="{ 'active': isActiveRoute(item.active_link) || isActiveRoute(item.active_link1) || isActiveRoute(item.active_link2) || isActiveRoute(item.active_link3)}">
                     <a href="javascript:void(0);" @click="toggleTab(item)">

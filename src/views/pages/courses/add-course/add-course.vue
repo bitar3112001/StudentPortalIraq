@@ -298,8 +298,7 @@ export default {
         onMounted(async () => {
 
             await store.dispatch('auth/fetchUserData');
-            console.log('Authentication state:', isAuthenticated.value, " and role: ", role.value, " and user type: ", userType.value);
-            console.log('current user: ', currentUser.value);
+       
         });
 
         return {
